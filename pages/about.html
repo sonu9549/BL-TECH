@@ -63,6 +63,18 @@
             }
         }
 
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         .animate-fade-in {
             animation: fade-in 0.6s ease-out forwards;
         }
@@ -80,16 +92,42 @@
             animation-delay: 0.3s;
         }
 
-        .delay-1000 {
-            animation-delay: 1s;
-        }
-
-        .delay-2000 {
-            animation-delay: 2s;
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
         }
 
         .animate-pulse-slow {
             animation: pulse-slow 4s ease-in-out infinite;
+        }
+
+        /* Custom hover effects */
+        .hover-scale {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #0d9488, #06b6d4);
+            border-radius: 1rem;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gradient-border:hover::before {
+            opacity: 1;
         }
     </style>
 </head>
@@ -108,7 +146,7 @@
                 <div class="max-w-4xl mx-auto text-center">
                     <div
                         class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 animate-fade-in">
-                        <i class="fas fa-sparkle text-teal-300"></i>
+                        <i class="fas fa-star text-teal-300"></i>
                         <span class="text-white font-semibold text-sm tracking-wide">INNOVATION UNLEASHED</span>
                     </div>
 
@@ -277,15 +315,18 @@
             </div>
         </section>
 
-        <!-- Expertise Section -->
-        <section class="py-24 bg-gradient-to-br from-gray-50 to-slate-50 relative overflow-hidden">
+        <!-- What We Do Best Section - NEW -->
+        <section class="py-24 bg-gradient-to-br from-teal-50 to-cyan-50 relative overflow-hidden">
+            <div class="absolute top-20 right-20 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
             <div class="container mx-auto px-4 relative">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Core
-                        Competencies</span>
+                    <span class="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3 block">What We Do
+                        Best</span>
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
-                        Technology <span
-                            class="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Excellence</span>
+                        Core <span
+                            class="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Expertise</span>
                     </h2>
                     <p class="text-xl text-gray-600">
                         Deep expertise across the most critical domains shaping the future of enterprise technology.
@@ -294,6 +335,115 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="expertiseGrid">
                     <!-- Expertise injected via JS -->
+                </div>
+
+                <!-- Floating CTA -->
+                <div class="text-center mt-12">
+                    <button onclick="window.location.href='pages/services.html'"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white rounded-xl font-semibold hover:bg-teal-700 transition-all hover:scale-105">
+                        Explore All Services
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Companies Choose Us - NEW (Replaces Timeline) -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Why Choose
+                        Us</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+                        What Makes <span
+                            class="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Us
+                            Different</span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Companies trust us because we deliver excellence, innovation, and measurable results.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="group gradient-border p-8 text-center hover:shadow-2xl transition-all duration-500">
+                        <div
+                            class="h-20 w-20 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-rocket text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Agile & Fast</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Rapid development cycles with continuous delivery. We bring your ideas to market faster with
+                            our agile methodology.
+                        </p>
+                    </div>
+
+                    <div class="group gradient-border p-8 text-center hover:shadow-2xl transition-all duration-500">
+                        <div
+                            class="h-20 w-20 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shield-alt text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Enterprise Security</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Bank-grade security protocols and compliance standards to protect your valuable business
+                            data.
+                        </p>
+                    </div>
+
+                    <div class="group gradient-border p-8 text-center hover:shadow-2xl transition-all duration-500">
+                        <div
+                            class="h-20 w-20 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-headset text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">24/7 Support</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Round-the-clock technical support and maintenance. We're always here when you need us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories / Case Studies - NEW -->
+        <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Success
+                        Stories</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+                        Our <span
+                            class="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Impact</span>
+                        in Numbers
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Measurable results that speak for themselves
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                    <div class="group p-6">
+                        <div class="text-5xl font-bold text-teal-600 mb-3 group-hover:scale-110 transition-transform">
+                            98%</div>
+                        <p class="text-gray-700 font-semibold">Client Satisfaction</p>
+                        <p class="text-gray-500 text-sm mt-1">Based on 100+ reviews</p>
+                    </div>
+                    <div class="group p-6">
+                        <div class="text-5xl font-bold text-teal-600 mb-3 group-hover:scale-110 transition-transform">
+                            50+</div>
+                        <p class="text-gray-700 font-semibold">Enterprise Clients</p>
+                        <p class="text-gray-500 text-sm mt-1">Across 12+ countries</p>
+                    </div>
+                    <div class="group p-6">
+                        <div class="text-5xl font-bold text-teal-600 mb-3 group-hover:scale-110 transition-transform">
+                            100%</div>
+                        <p class="text-gray-700 font-semibold">Project Delivery</p>
+                        <p class="text-gray-500 text-sm mt-1">On-time & on-budget</p>
+                    </div>
+                    <div class="group p-6">
+                        <div class="text-5xl font-bold text-teal-600 mb-3 group-hover:scale-110 transition-transform">3x
+                        </div>
+                        <p class="text-gray-700 font-semibold">ROI for Clients</p>
+                        <p class="text-gray-500 text-sm mt-1">Average return on investment</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -322,13 +472,24 @@
             </div>
         </section>
 
-        <!-- Trusted By - Client Logos -->
-        <section class="py-16 bg-white">
+        <!-- Testimonials Section - NEW (Replaces Client Logos) -->
+        <section class="py-24 bg-white">
             <div class="container mx-auto px-4">
-                <p class="text-center text-gray-500 font-semibold text-sm uppercase tracking-wider mb-8">Trusted by
-                    industry leaders worldwide</p>
-                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-16" id="clientLogos">
-                    <!-- Client logos injected via JS -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span
+                        class="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Testimonials</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+                        What Our <span
+                            class="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Clients
+                            Say</span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Don't just take our word for it — hear from our satisfied clients
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="testimonialsGrid">
+                    <!-- Testimonials injected via JS -->
                 </div>
             </div>
         </section>
@@ -438,22 +599,19 @@
             { name: "Digital Transformation", icon: "fa-bolt", color: "text-yellow-600", bg: "bg-yellow-50" }
         ];
 
-        // Leadership Team
-        const leadershipTeam = [
-            { name: "Sonu Kumar", role: "Chief Executive Officer", bio: "2+ years of tech leadership, previously at Google & Microsoft. Driving innovation with purpose.", image: "https://ui-avatars.com/api/?name=Michael+Chen&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
-            { name: "Sanjay Bairwa", role: "Chief Technology Officer", bio: "Former Principal Architect at AWS, expert in scalable cloud solutions and AI infrastructure.", image: "https://ui-avatars.com/api/?name=Sarah+Williams&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
-            { name: "David Rodriguez", role: "VP of Engineering", bio: "Led global engineering teams at IBM, passionate about building high-performance cultures.", image: "https://ui-avatars.com/api/?name=David+Rodriguez&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
-            { name: "Priya Patel", role: "Chief Product Officer", bio: "Product visionary with successful exits, focused on user-centric design and market fit.", image: "https://ui-avatars.com/api/?name=Priya+Patel&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" }
+        // Testimonials Data (New)
+        const testimonials = [
+            { name: "Rahul Sharma", role: "CEO, TechCorp", quote: "BL TECH transformed our business with their exceptional web development services. The team is professional, responsive, and delivered beyond our expectations.", rating: 5, avatar: "RS" },
+            { name: "Priyanka Mehta", role: "CTO, InnovateSoft", quote: "Their AI solutions helped us automate our customer service operations. The ROI has been incredible. Highly recommended!", rating: 5, avatar: "PM" },
+            { name: "Amit Kumar", role: "Founder, AppVentures", quote: "The mobile app they developed for us is amazing. Great communication, on-time delivery, and top-notch quality.", rating: 5, avatar: "AK" }
         ];
 
-        // Client Logos
-        const clientLogos = [
-            "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/6/6c/Spotify_Logo.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
+        // Leadership Team
+        const leadershipTeam = [
+            { name: "Sonu Kumar", role: "Chief Executive Officer", bio: "2+ years of tech leadership, previously at Google & Microsoft. Driving innovation with purpose.", image: "https://ui-avatars.com/api/?name=Sonu+Kumar&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
+            { name: "Sanjay Bairwa", role: "Chief Technology Officer", bio: "Former Principal Architect at AWS, expert in scalable cloud solutions and AI infrastructure.", image: "https://ui-avatars.com/api/?name=Sanjay+Bairwa&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
+            { name: "Rahul Verma", role: "VP of Engineering", bio: "Led global engineering teams at IBM, passionate about building high-performance cultures.", image: "https://ui-avatars.com/api/?name=Rahul+Verma&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
+            { name: "Priya Patel", role: "Chief Product Officer", bio: "Product visionary with successful exits, focused on user-centric design and market fit.", image: "https://ui-avatars.com/api/?name=Priya+Patel&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" }
         ];
 
         let activeTab = "mission";
@@ -461,8 +619,6 @@
         // Set active tab
         function setActiveTab(tab) {
             activeTab = tab;
-
-            // Update button styles
             const missionBtn = document.getElementById("tabMission");
             const visionBtn = document.getElementById("tabVision");
             const valuesBtn = document.getElementById("tabValues");
@@ -476,7 +632,6 @@
             activeBtn.classList.remove("bg-white", "text-gray-700", "hover:text-teal-600", "hover:bg-gray-50", "border", "border-gray-200");
             activeBtn.classList.add("bg-gradient-to-r", "from-teal-600", "to-cyan-600", "text-white", "shadow-xl", "shadow-teal-500/30", "scale-105");
 
-            // Show/hide content
             document.getElementById("missionContent").style.display = tab === "mission" ? "block" : "none";
             document.getElementById("visionContent").style.display = tab === "vision" ? "block" : "none";
             document.getElementById("valuesContent").style.display = tab === "values" ? "block" : "none";
@@ -523,6 +678,25 @@
             `).join("");
         }
 
+        function renderTestimonials() {
+            const container = document.getElementById("testimonialsGrid");
+            container.innerHTML = testimonials.map(t => `
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="flex items-center gap-1 mb-4">
+                        ${'<i class="fas fa-star text-yellow-400"></i>'.repeat(t.rating)}
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"${t.quote}"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="h-12 w-12 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center text-white font-bold">${t.avatar}</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">${t.name}</h4>
+                            <p class="text-gray-500 text-sm">${t.role}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+        }
+
         function renderLeadership() {
             const container = document.getElementById("leadershipGrid");
             container.innerHTML = leadershipTeam.map((member, idx) => `
@@ -541,13 +715,6 @@
                         </div>
                     </div>
                 </div>
-            `).join("");
-        }
-
-        function renderClientLogos() {
-            const container = document.getElementById("clientLogos");
-            container.innerHTML = clientLogos.map(logo => `
-                <img src="${logo}" alt="Client logo" class="h-8 md:h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
             `).join("");
         }
 
@@ -588,9 +755,8 @@
             renderStats();
             renderValues();
             renderExpertise();
-            renderTimeline();
+            renderTestimonials();
             renderLeadership();
-            renderClientLogos();
             setActiveTab("mission");
         });
     </script>

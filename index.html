@@ -4,146 +4,663 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <meta name="description"
+        content="BL TECH - Future-Ready Technology Solutions. We deliver cutting-edge software development, AI solutions, cloud services, and digital transformation." />
+    <meta name="keywords"
+        content="software company, web development, mobile apps, AI solutions, cloud services, IT consulting" />
     <title>BL TECH • Future-Ready Technology Solutions</title>
+
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
-    <!-- Separate CSS file -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        /* Additional Homepage Styles - Blue Theme */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6, #06b6d4);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        .service-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 40px -12px rgba(59, 130, 246, 0.25);
+        }
+
+        /* Trending badge */
+        .trending-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #ef4444, #f97316);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            z-index: 10;
+        }
+
+        /* Client Logo Animation */
+        .client-logo {
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+            opacity: 0.6;
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Gradient text for blue theme */
+        .blue-gradient-text {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Header will be loaded here -->
     <div id="header"></div>
 
-    <!-- ========== MAIN CONTENT (Modern About page layout) ========== -->
-    <main class="main-content">
-        <!-- Hero section with geometric background -->
-        <section class="page-hero">
-            <div class="container hero-content">
-                <span class="hero-badge"><i class="fas fa-rocket"></i> Digital Innovation Partner</span>
-                <h1>About <span class="text-gradient">BL TECH</span></h1>
-                <p class="hero-description">Engineering future-ready technology solutions that transform businesses,
-                    elevate user experiences, and drive sustainable growth.</p>
+    <main>
+        <!-- Hero Section - Blue Theme -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-600">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 opacity-10"
+                style="backgroundImage: radial-gradient(circle at 1px 1px, white 1px, transparent 1px); backgroundSize: 40px 40px">
             </div>
-            <div class="hero-shapes">
-                <div class="shape shape1"></div>
-                <div class="shape shape2"></div>
-                <div class="shape shape3"></div>
+
+            <div class="relative container mx-auto px-4 py-24 md:py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Content -->
+                    <div class="text-center lg:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                            <i class="fas fa-chart-line text-yellow-300"></i>
+                            <span class="text-white font-semibold text-sm">#1 TRENDING TECH PARTNER 2024</span>
+                        </div>
+
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                            Future-Ready <br />
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-cyan-200">
+                                Technology Solutions
+                            </span>
+                        </h1>
+
+                        <p class="text-lg text-white/80 mb-8 leading-relaxed">
+                            Join the ranks of industry leaders who trust us for cutting-edge software development,
+                            AI-powered solutions, and digital innovation. Let's build the future together.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <button onclick="window.location.href='pages/contact.html'"
+                                class="group px-8 py-4 bg-white text-blue-700 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                                Get Started
+                                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <button onclick="window.location.href='pages/services.html'"
+                                class="px-8 py-4 border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-sm flex items-center justify-center gap-2">
+                                <i class="fas fa-fire"></i>
+                                Trending Now
+                            </button>
+                        </div>
+
+                        <!-- Trending Tags -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-8">
+                            <span
+                                class="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-white text-xs flex items-center gap-1">
+                                <i class="fas fa-robot text-cyan-300"></i> #AIRevolution
+                            </span>
+                            <span
+                                class="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-white text-xs flex items-center gap-1">
+                                <i class="fas fa-cloud text-cyan-300"></i> #CloudNative
+                            </span>
+                            <span
+                                class="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-white text-xs flex items-center gap-1">
+                                <i class="fas fa-mobile-alt text-cyan-300"></i> #TechInnovation
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Right Content - Trending Stats -->
+                    <div class="relative">
+                        <div
+                            class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse">
+                        </div>
+                        <div class="relative grid grid-cols-2 gap-6">
+                            <div
+                                class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all">
+                                <div class="text-3xl font-bold text-white">⭐ 4.9</div>
+                                <div class="text-white/70 text-sm mt-1">Client Rating</div>
+                                <div class="flex justify-center mt-2">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 mt-8 hover:bg-white/20 transition-all">
+                                <div class="text-3xl font-bold text-white">🚀 150+</div>
+                                <div class="text-white/70 text-sm mt-1">Live Projects</div>
+                            </div>
+                            <div
+                                class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all">
+                                <div class="text-3xl font-bold text-white">🌍 12+</div>
+                                <div class="text-white/70 text-sm mt-1">Global Offices</div>
+                            </div>
+                            <div
+                                class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 mt-8 hover:bg-white/20 transition-all">
+                                <div class="text-3xl font-bold text-white">⚡ 24/7</div>
+                                <div class="text-white/70 text-sm mt-1">Support Available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curved Bottom -->
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 120L1440 0V120H0Z" fill="#f8fafc" />
+                </svg>
             </div>
         </section>
 
-        <div class="container">
-            <!-- Vision, Mission, Values cards -->
-            <div class="content-section">
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);"><i
-                                class="fas fa-eye"></i></div>
-                        <h3>Our Vision</h3>
-                        <p>To become the leading technology solutions provider, empowering businesses worldwide with
-                            innovative and scalable digital solutions that drive growth and success.</p>
+        <!-- Trending Services Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 mb-4">
+                        <i class="fas fa-fire text-blue-600"></i>
+                        <span class="text-blue-600 font-semibold text-sm">TRENDING NOW</span>
                     </div>
-                    <div class="card">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #22c55e, #10b981);"><i
-                                class="fas fa-bullseye"></i></div>
-                        <h3>Our Mission</h3>
-                        <p>Delivering cutting-edge technology solutions that transform businesses, enhance productivity,
-                            and create lasting value for our clients through innovation and excellence.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"><i
-                                class="fas fa-heart"></i></div>
-                        <h3>Our Values</h3>
-                        <p>Innovation, integrity, customer focus, and continuous learning drive everything we do. We
-                            believe in building long-term partnerships based on trust and results.</p>
-                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                        Most <span class="blue-gradient-text">In-Demand</span> Services
+                    </h2>
+                    <p class="text-gray-600 text-lg">What's hot in the tech world right now</p>
                 </div>
 
-                <!-- Stats counter style -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">150+</span>
-                        <p>Projects Completed</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Trending Service 1 -->
+                    <div
+                        class="service-card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-blue-300 relative">
+                        <div class="trending-badge">
+                            <i class="fas fa-fire"></i> TRENDING
+                        </div>
+                        <div
+                            class="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6">
+                            <i class="fas fa-robot text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Generative AI Solutions</h3>
+                        <p class="text-gray-600 mb-4">Custom GPT models, LLM integration, and AI-powered automation for
+                            your business.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#ChatGPT</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#LLM</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#AutoGPT</span>
+                        </div>
+                        <a href="pages/services.html"
+                            class="text-blue-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">50+</span>
-                        <p>Happy Clients</p>
+
+                    <!-- Trending Service 2 -->
+                    <div
+                        class="service-card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-blue-300 relative">
+                        <div class="trending-badge">
+                            <i class="fas fa-fire"></i> TRENDING
+                        </div>
+                        <div
+                            class="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6">
+                            <i class="fas fa-cloud-upload-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Cloud Migration</h3>
+                        <p class="text-gray-600 mb-4">Seamless migration to AWS, Azure, or GCP with zero downtime and
+                            optimized costs.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#AWS</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#Azure</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#K8s</span>
+                        </div>
+                        <a href="pages/services.html"
+                            class="text-blue-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">10+</span>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">24/7</span>
-                        <p>Support</p>
+
+                    <!-- Trending Service 3 -->
+                    <div
+                        class="service-card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-blue-300 relative">
+                        <div class="trending-badge">
+                            <i class="fas fa-fire"></i> TRENDING
+                        </div>
+                        <div
+                            class="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6">
+                            <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Cross-Platform Apps</h3>
+                        <p class="text-gray-600 mb-4">React Native & Flutter apps that work seamlessly on iOS and
+                            Android.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#ReactNative</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#Flutter</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">#iOS</span>
+                        </div>
+                        <a href="pages/services.html"
+                            class="text-blue-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Contact Section (modern glass card) -->
-            <div class="contact-section" id="contactSection">
-                <div class="section-header">
-                    <h2><i class="fas fa-headset" style="color: #2563eb;"></i> Get In Touch</h2>
-                    <p>We'd love to hear about your project. Let's start a conversation.</p>
+        <!-- Tech Stack Section - Featured -->
+        <section class="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Tech Stack</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                        Cutting-Edge <span class="blue-gradient-text">Technologies</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg">Leveraging the most advanced and trending technologies</p>
                 </div>
-                <div class="contact-grid">
-                    <div class="contact-card"><i class="fas fa-envelope"></i>
-                        <h4>Email Us</h4>
-                        <p><a href="mailto:support@bltech.in">support@bltech.in</a></p>
-                        <p><a href="mailto:info@bltech.in">info@bltech.in</a></p>
-                    </div>
-                    <div class="contact-card"><i class="fas fa-phone"></i>
-                        <h4>Call Us</h4>
-                        <p><a href="tel:+919829691259">+91 9829691259</a></p>
-                        <p>Mon - Sat, 9 AM - 6 PM</p>
-                    </div>
-                    <div class="contact-card"><i class="fas fa-map-marker-alt"></i>
-                        <h4>Visit Us</h4>
-                        <p>Bhilwara, Rajasthan</p>
-                        <p>India - 311001</p>
-                    </div>
-                    <div class="contact-card"><i class="fas fa-comments"></i>
-                        <h4>Live Chat</h4>
-                        <p>Available 24/7</p>
-                        <p>Quick response guaranteed</p>
-                    </div>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        React 19</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        Next.js 14</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        Node.js</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        Python</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        LangChain</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        AWS Bedrock</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        Docker</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        Kubernetes</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        MongoDB</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        PostgreSQL</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        TensorFlow</div>
+                    <div
+                        class="px-5 py-3 bg-white rounded-xl font-semibold text-gray-700 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg cursor-pointer">
+                        PyTorch</div>
                 </div>
-                <form class="quick-contact-form" id="quickContactForm">
-                    <h3 style="margin-bottom: 1rem; color: #0f172a;">Send Us a Message</h3>
-                    <div class="form-row">
-                        <input type="text" id="contactName" placeholder="Your Name" required />
-                        <input type="email" id="contactEmail" placeholder="Your Email" required />
-                    </div>
-                    <textarea id="contactMessage" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
-                </form>
             </div>
-        </div>
+        </section>
+
+        <!-- Why Choose Us - Enhanced -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                        What Makes Us <span class="blue-gradient-text">Different</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg">Innovation, excellence, and client success at our core</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 rounded-2xl hover:shadow-xl transition-all group">
+                        <div
+                            class="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-all">
+                            <i class="fas fa-bolt text-blue-600 text-3xl group-hover:text-white transition-all"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Lightning Fast Delivery</h3>
+                        <p class="text-gray-600">Agile methodology ensuring rapid iterations and faster time-to-market.
+                        </p>
+                        <div class="mt-3 inline-block px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">
+                            🚀 2x Faster
+                        </div>
+                    </div>
+                    <div class="text-center p-8 rounded-2xl hover:shadow-xl transition-all group">
+                        <div
+                            class="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-all">
+                            <i class="fas fa-award text-blue-600 text-3xl group-hover:text-white transition-all"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Award Winning Quality</h3>
+                        <p class="text-gray-600">Recognized for excellence in software development and innovation.</p>
+                        <div class="mt-3 inline-block px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full">
+                            ⭐ Best Tech Partner 2024
+                        </div>
+                    </div>
+                    <div class="text-center p-8 rounded-2xl hover:shadow-xl transition-all group">
+                        <div
+                            class="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-all">
+                            <i class="fas fa-heart text-blue-600 text-3xl group-hover:text-white transition-all"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Client First Approach</h3>
+                        <p class="text-gray-600">Dedicated support and partnership beyond project delivery.</p>
+                        <div class="mt-3 inline-block px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
+                            💯 100% Client Retention
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories / Case Studies -->
+        <section class="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Success Stories</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                        Our <span class="blue-gradient-text">Impact</span> in Action
+                    </h2>
+                    <p class="text-gray-600 text-lg">Real results from real clients</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
+                        <div class="flex items-center gap-2 mb-4">
+                            <i class="fas fa-chart-line text-blue-500 text-2xl"></i>
+                            <span class="text-2xl font-bold blue-gradient-text">3x</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Revenue Growth</h3>
+                        <p class="text-gray-600">E-commerce platform optimization led to 3x increase in sales for a
+                            retail client.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
+                        <div class="flex items-center gap-2 mb-4">
+                            <i class="fas fa-tachometer-alt text-blue-500 text-2xl"></i>
+                            <span class="text-2xl font-bold blue-gradient-text">99.9%</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Uptime Achieved</h3>
+                        <p class="text-gray-600">Cloud infrastructure optimization for a fintech client.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
+                        <div class="flex items-center gap-2 mb-4">
+                            <i class="fas fa-clock text-blue-500 text-2xl"></i>
+                            <span class="text-2xl font-bold blue-gradient-text">60%</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Faster Processing</h3>
+                        <p class="text-gray-600">AI-powered automation reduced processing time for a logistics company.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                        What Our <span class="blue-gradient-text">Clients Say</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg">Trusted by businesses worldwide</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">"BL TECH's AI solutions transformed our customer support.
+                            The team is exceptional!"</p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                RK</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Rahul Kumar</h4>
+                                <p class="text-gray-500 text-sm">CEO, TechStart</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">"Their cloud migration service was seamless. Highly
+                            recommended for any enterprise."</p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                PS</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Priyanka Sharma</h4>
+                                <p class="text-gray-500 text-sm">CTO, InnovateCorp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">"The mobile app they built for us is amazing. Great
+                            communication and quality."</p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                AM</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Amit Mehta</h4>
+                                <p class="text-gray-500 text-sm">Founder, AppVentures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Logos Section -->
+        <section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+            <div class="container mx-auto px-4">
+                <p class="text-center text-gray-500 font-semibold text-sm uppercase tracking-wider mb-8">Trusted by
+                    Industry Leaders</p>
+                <div class="flex flex-wrap justify-center items-center gap-12">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                        class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft"
+                        class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"
+                        class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix"
+                        class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Spotify_Logo.svg" alt="Spotify"
+                        class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section - Blue Theme -->
+        <section class="py-20 bg-gradient-to-r from-blue-800 via-blue-700 to-cyan-600">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-4">Stay Ahead of the Curve</h2>
+                    <p class="text-white/80 mb-6">Get weekly tech insights and industry updates delivered to your inbox.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email"
+                            class="flex-1 px-4 py-3 rounded-xl border-0 focus:ring-2 focus:ring-white outline-none">
+                        <button onclick="subscribeNewsletter()"
+                            class="px-6 py-3 bg-white text-blue-600 rounded-xl font-semibold hover:shadow-lg transition-all">
+                            Subscribe Now
+                        </button>
+                    </div>
+                    <p class="text-white/60 text-xs mt-4">Join 10,000+ subscribers • No spam, unsubscribe anytime</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer id="footer">
-    </footer>
+    <footer id="footer"></footer>
 
-    <!-- Script to load header -->
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
     <script>
-        // Load header from external file
-        fetch('pages/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            })
-            .catch(error => console.log('Error loading header:', error));
+        // Load header and footer
+        function loadHeaderFooter() {
+            fetch('pages/header.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('header').innerHTML = data)
+                .catch(error => console.log('Error loading header:', error));
 
-        fetch('pages/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.log('Error loading header:', error));
+            fetch('pages/footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer').innerHTML = data)
+                .catch(error => console.log('Error loading footer:', error));
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email) {
+                alert('Thank you for subscribing! We\'ll send updates to ' + email);
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Scroll to top
+        function setupScrollToTop() {
+            const scrollBtn = document.getElementById('scrollTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.add('show');
+                } else {
+                    scrollBtn.classList.remove('show');
+                }
+            });
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Initialize all
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHeaderFooter();
+            setupScrollToTop();
+        });
     </script>
 
     <script src="js/script.js"></script>
