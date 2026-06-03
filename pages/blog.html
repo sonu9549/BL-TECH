@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Blog - BL TECH | Tech Insights & Industry Updates</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .prose {
+            max-width: 65ch;
+            color: #374151;
+        }
+
+        .prose p {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-cyan-600">
+            <div class="relative container mx-auto px-4 py-20 md:py-28">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                        <i class="fas fa-star text-white"></i>
+                        <span class="text-white font-semibold text-sm">INSIGHTS & UPDATES</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                        <span class="block">Tech Insights &</span>
+                        <span class="text-cyan-200">Industry Updates</span>
+                    </h1>
+
+                    <p class="text-xl text-indigo-100 max-w-2xl mx-auto mb-8 leading-relaxed">
+                        Stay updated with the latest trends, insights, and best practices in technology and digital
+                        innovation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Bar -->
+        <section class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-gray-200 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                    <!-- Search -->
+                    <div class="relative flex-1 max-w-md">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="searchInput" placeholder="Search articles..."
+                            class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all">
+                    </div>
+
+                    <!-- View Mode Toggle -->
+                    <div class="flex items-center gap-2">
+                        <button onclick="setViewMode('grid')" id="gridBtn"
+                            class="p-2 rounded-lg transition-colors bg-indigo-100 text-indigo-600">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button onclick="setViewMode('list')" id="listBtn"
+                            class="p-2 rounded-lg transition-colors text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="py-8 border-b border-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap gap-2 justify-center" id="categoryContainer">
+                    <!-- Categories injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Active Category Banner -->
+        <div id="filterBanner" class="container mx-auto px-4 mt-6" style="display: none;">
+            <div
+                class="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-xl p-4 flex items-center justify-between flex-wrap gap-4">
+                <div>
+                    <h3 class="font-semibold text-gray-900">
+                        Showing posts in <span id="currentCategoryLabel" class="text-indigo-600"></span>
+                    </h3>
+                    <p class="text-sm text-gray-600 mt-1">
+                        Found <span id="filteredCount">0</span> article(s)
+                    </p>
+                </div>
+                <button onclick="clearFilter()"
+                    class="text-sm text-indigo-600 hover:text-indigo-700 font-medium flex items-center gap-1">
+                    Clear filter
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Featured Posts Section -->
+        <section id="featuredSection" class="py-12 bg-gradient-to-br from-indigo-50 to-cyan-50">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Featured Articles</h2>
+                        <p class="text-gray-600">Hand-picked content for you</p>
+                    </div>
+                    <div class="flex items-center gap-1 text-sm text-indigo-600">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Trending Now</span>
+                    </div>
+                </div>
+
+                <div id="featuredGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Featured posts injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- All Posts Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h2 id="postsTitle" class="text-2xl font-bold text-gray-900">Latest Articles</h2>
+                        <p class="text-gray-600">Showing <span id="postCount">0</span> articles</p>
+                    </div>
+                </div>
+
+                <!-- No Results -->
+                <div id="noResults" class="text-center py-16" style="display: none;">
+                    <div class="h-20 w-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-3xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">No articles found</h3>
+                    <p class="text-gray-500">Try adjusting your search or filter to find what you're looking for.</p>
+                    <button onclick="clearAllFilters()"
+                        class="mt-4 px-4 py-2 bg-indigo-500 text-white rounded-lg font-medium">
+                        Clear all filters
+                    </button>
+                </div>
+
+                <!-- Posts Grid -->
+                <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Posts injected here -->
+                </div>
+
+                <!-- Posts List View -->
+                <div id="postsList" class="space-y-4" style="display: none;">
+                    <!-- Posts injected here for list view -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-16 bg-gradient-to-r from-indigo-600 via-indigo-700 to-cyan-600">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
+                    <p class="text-indigo-100 mb-6">Get the latest tech insights and updates delivered to your inbox.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email"
+                            class="flex-1 px-4 py-3 rounded-xl border-0 focus:ring-2 focus:ring-white outline-none">
+                        <button onclick="subscribeNewsletter()"
+                            class="px-6 py-3 bg-white text-indigo-600 rounded-xl font-semibold hover:shadow-lg transition-all">
+                            Subscribe
+                        </button>
+                    </div>
+                    <p class="text-indigo-100 text-xs mt-4">No spam, unsubscribe anytime.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Blog Post Modal -->
+    <div id="postModal" class="fixed inset-0 z-50 overflow-y-auto" style="display: none;">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-75" onclick="closeModal()"></div>
+
+            <div
+                class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-2xl shadow-xl sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+                <div class="relative">
+                    <button onclick="closeModal()"
+                        class="absolute top-4 right-4 z-10 p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                    <img id="modalImage" src="" alt="" class="w-full h-64 object-cover">
+
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+                            <div class="flex items-center gap-1"><i class="far fa-calendar"></i> <span
+                                    id="modalDate"></span></div>
+                            <div class="flex items-center gap-1"><i class="far fa-clock"></i> <span
+                                    id="modalReadTime"></span></div>
+                            <div class="flex items-center gap-1"><i class="far fa-eye"></i> <span
+                                    id="modalViews"></span> views</div>
+                        </div>
+
+                        <h2 id="modalTitle" class="text-3xl font-bold text-gray-900 mb-4"></h2>
+
+                        <div class="flex items-center gap-3 mb-6 pb-6 border-b border-gray-100">
+                            <div id="modalAuthorAvatar"
+                                class="h-12 w-12 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                            </div>
+                            <div>
+                                <div id="modalAuthor" class="font-semibold text-gray-900"></div>
+                                <div id="modalAuthorRole" class="text-sm text-gray-500"></div>
+                            </div>
+                        </div>
+
+                        <div class="prose max-w-none" id="modalContent">
+                            <!-- Content injected here -->
+                        </div>
+
+                        <div id="modalTags" class="flex flex-wrap gap-2 my-6">
+                            <!-- Tags injected here -->
+                        </div>
+
+                        <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+                            <div class="flex items-center gap-3">
+                                <button
+                                    class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg hover:bg-red-100 transition-colors group">
+                                    <i class="far fa-heart text-gray-500 group-hover:text-red-500"></i>
+                                    <span id="modalLikes"></span> Likes
+                                </button>
+                                <button
+                                    class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg hover:bg-indigo-100 transition-colors group">
+                                    <i class="far fa-comment text-gray-500 group-hover:text-indigo-500"></i>
+                                    <span id="modalComments"></span> Comments
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button class="p-2 bg-gray-100 rounded-lg hover:bg-blue-100 transition-colors"><i
+                                        class="fab fa-twitter"></i></button>
+                                <button class="p-2 bg-gray-100 rounded-lg hover:bg-blue-100 transition-colors"><i
+                                        class="fab fa-linkedin-in"></i></button>
+                                <button class="p-2 bg-gray-100 rounded-lg hover:bg-blue-100 transition-colors"><i
+                                        class="fab fa-facebook-f"></i></button>
+                                <button class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"><i
+                                        class="fas fa-link"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Blog Posts Data
+        const blogPosts = [
+            { id: 1, title: "Top 10 Web Development Trends to Watch in 2024", excerpt: "Discover the latest trends shaping the future of web development, from AI-powered tools to serverless architecture.", category: "web-dev", author: "Sonu Kumar", authorAvatar: "SK", authorRole: "Senior Software Engineer", date: "December 15, 2024", readTime: "5 min read", views: 1247, likes: 89, comments: 23, image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800", tags: ["Web Development", "Trends", "JavaScript"], featured: true },
+            { id: 2, title: "How AI is Transforming Business Operations in 2024", excerpt: "Explore how artificial intelligence is revolutionizing business processes and driving innovation.", category: "ai", author: "Priyanka Sharma", authorAvatar: "PS", authorRole: "AI Research Lead", date: "December 10, 2024", readTime: "4 min read", views: 2341, likes: 156, comments: 45, image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800", tags: ["AI", "Machine Learning", "Business"], featured: true },
+            { id: 3, title: "The Ultimate Guide to Cloud Migration", excerpt: "Step-by-step guide to successfully migrate your infrastructure to the cloud.", category: "cloud", author: "Sanjay Mehta", authorAvatar: "SM", authorRole: "Cloud Architect", date: "December 5, 2024", readTime: "8 min read", views: 892, likes: 67, comments: 12, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800", tags: ["Cloud Computing", "AWS", "Azure"], featured: false },
+            { id: 4, title: "Mobile App Development Best Practices", excerpt: "Essential best practices for building high-performance mobile applications.", category: "mobile", author: "Rahul Verma", authorAvatar: "RV", authorRole: "Mobile Dev Lead", date: "November 28, 2024", readTime: "6 min read", views: 1567, likes: 112, comments: 34, image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800", tags: ["Mobile", "iOS", "Android"], featured: false },
+            { id: 5, title: "Cybersecurity Threats to Watch in 2024", excerpt: "Stay ahead of emerging cybersecurity threats with our comprehensive guide.", category: "security", author: "Neha Gupta", authorAvatar: "NG", authorRole: "Security Specialist", date: "November 20, 2024", readTime: "7 min read", views: 3421, likes: 234, comments: 56, image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800", tags: ["Security", "Cybersecurity", "Privacy"], featured: true },
+            { id: 6, title: "The Rise of Edge Computing", excerpt: "Understanding edge computing and its impact on modern applications.", category: "technology", author: "Vikram Singh", authorAvatar: "VS", authorRole: "Tech Evangelist", date: "November 15, 2024", readTime: "5 min read", views: 678, likes: 45, comments: 8, image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800", tags: ["Edge Computing", "IoT", "Technology"], featured: false },
+            { id: 7, title: "Getting Started with React 19", excerpt: "Learn about the latest features and improvements in React 19.", category: "web-dev", author: "Sonu Kumar", authorAvatar: "SK", authorRole: "Senior Software Engineer", date: "November 10, 2024", readTime: "6 min read", views: 567, likes: 34, comments: 12, image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800", tags: ["React", "JavaScript", "Frontend"], featured: false },
+            { id: 8, title: "Machine Learning Fundamentals", excerpt: "A beginner's guide to understanding machine learning concepts.", category: "ai", author: "Priyanka Sharma", authorAvatar: "PS", authorRole: "AI Research Lead", date: "November 5, 2024", readTime: "10 min read", views: 234, likes: 23, comments: 5, image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800", tags: ["AI", "Machine Learning", "Data Science"], featured: false }
+        ];
+
+        const categories = [
+            { id: "all", label: "All Posts", icon: "fa-star", count: 24 },
+            { id: "technology", label: "Technology", icon: "fa-bolt", count: 8 },
+            { id: "ai", label: "AI & ML", icon: "fa-microchip", count: 6 },
+            { id: "web-dev", label: "Web Development", icon: "fa-code", count: 5 },
+            { id: "mobile", label: "Mobile Apps", icon: "fa-mobile-alt", count: 3 },
+            { id: "cloud", label: "Cloud Computing", icon: "fa-cloud", count: 2 },
+            { id: "security", label: "Cybersecurity", icon: "fa-shield-alt", count: 4 }
+        ];
+
+        // Update counts
+        categories.forEach(cat => {
+            if (cat.id === "all") cat.count = blogPosts.length;
+            else cat.count = blogPosts.filter(p => p.category === cat.id).length;
+        });
+
+        let activeCategory = "all";
+        let searchQuery = "";
+        let viewMode = "grid";
+        let selectedPost = null;
+
+        // Get URL parameter
+        function getCategoryFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("category") || "all";
+        }
+
+        // Set active category and update URL
+        function setActiveCategory(categoryId) {
+            activeCategory = categoryId;
+            if (categoryId === "all") {
+                window.history.pushState({}, "", "blog.html");
+            } else {
+                window.history.pushState({}, "", `blog.html?category=${categoryId}`);
+            }
+            renderCategories();
+            renderPosts();
+            updateFilterBanner();
+        }
+
+        function clearFilter() {
+            setActiveCategory("all");
+        }
+
+        function clearAllFilters() {
+            setActiveCategory("all");
+            document.getElementById("searchInput").value = "";
+            searchQuery = "";
+            renderPosts();
+        }
+
+        function updateFilterBanner() {
+            const banner = document.getElementById("filterBanner");
+            if (activeCategory !== "all") {
+                const category = categories.find(c => c.id === activeCategory);
+                document.getElementById("currentCategoryLabel").innerText = category?.label || "";
+                banner.style.display = "block";
+            } else {
+                banner.style.display = "none";
+            }
+        }
+
+        // Set view mode
+        function setViewMode(mode) {
+            viewMode = mode;
+            const gridBtn = document.getElementById("gridBtn");
+            const listBtn = document.getElementById("listBtn");
+
+            if (mode === "grid") {
+                gridBtn.classList.add("bg-indigo-100", "text-indigo-600");
+                gridBtn.classList.remove("text-gray-400");
+                listBtn.classList.remove("bg-indigo-100", "text-indigo-600");
+                listBtn.classList.add("text-gray-400");
+                document.getElementById("postsGrid").style.display = "grid";
+                document.getElementById("postsList").style.display = "none";
+            } else {
+                listBtn.classList.add("bg-indigo-100", "text-indigo-600");
+                listBtn.classList.remove("text-gray-400");
+                gridBtn.classList.remove("bg-indigo-100", "text-indigo-600");
+                gridBtn.classList.add("text-gray-400");
+                document.getElementById("postsGrid").style.display = "none";
+                document.getElementById("postsList").style.display = "block";
+            }
+            renderPosts();
+        }
+
+        // Search handler
+        function handleSearch() {
+            searchQuery = document.getElementById("searchInput").value;
+            renderPosts();
+        }
+
+        // Render categories
+        function renderCategories() {
+            const container = document.getElementById("categoryContainer");
+            container.innerHTML = categories.map(cat => `
+                <button onclick="setActiveCategory('${cat.id}')" 
+                    class="px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 flex items-center gap-2 ${activeCategory === cat.id ? 'bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
+                    <i class="fas ${cat.icon}"></i>
+                    ${cat.label}
+                    <span class="px-1.5 py-0.5 rounded-full text-xs ${activeCategory === cat.id ? 'bg-white/20' : 'bg-gray-200'}">${cat.count}</span>
+                </button>
+            `).join("");
+        }
+
+        // Filter posts
+        function getFilteredPosts() {
+            return blogPosts.filter(post => {
+                const matchesCategory = activeCategory === "all" || post.category === activeCategory;
+                const matchesSearch = searchQuery === "" ||
+                    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+                return matchesCategory && matchesSearch;
+            });
+        }
+
+        // Render featured posts
+        function renderFeatured() {
+            const featuredSection = document.getElementById("featuredSection");
+            const featuredPosts = blogPosts.filter(p => p.featured);
+
+            if (activeCategory === "all" && !searchQuery) {
+                featuredSection.style.display = "block";
+                const container = document.getElementById("featuredGrid");
+                container.innerHTML = featuredPosts.map(post => `
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3"><span class="px-2 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold rounded-full">Featured</span></div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                                <div class="flex items-center gap-1"><i class="far fa-calendar"></i> ${post.date}</div>
+                                <div class="flex items-center gap-1"><i class="far fa-clock"></i> ${post.readTime}</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2">${post.title}</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">${post.excerpt}</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="h-8 w-8 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">${post.authorAvatar}</div>
+                                    <div><div class="text-sm font-medium text-gray-900">${post.author}</div><div class="text-xs text-gray-500">${post.authorRole}</div></div>
+                                </div>
+                                <button onclick="openModal(${post.id})" class="text-indigo-600 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Read More <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `).join("");
+            } else {
+                featuredSection.style.display = "none";
+            }
+        }
+
+        // Render posts
+        function renderPosts() {
+            const filtered = getFilteredPosts();
+            const noResults = document.getElementById("noResults");
+            const postsGrid = document.getElementById("postsGrid");
+            const postsList = document.getElementById("postsList");
+            const postCountSpan = document.getElementById("postCount");
+            const filteredCountSpan = document.getElementById("filteredCount");
+            const postsTitle = document.getElementById("postsTitle");
+
+            const categoryLabel = categories.find(c => c.id === activeCategory)?.label || "Latest Articles";
+            postsTitle.innerText = activeCategory === "all" ? "Latest Articles" : `${categoryLabel} Articles`;
+            postCountSpan.innerText = filtered.length;
+            if (filteredCountSpan) filteredCountSpan.innerText = filtered.length;
+
+            if (filtered.length === 0) {
+                noResults.style.display = "block";
+                postsGrid.style.display = "none";
+                postsList.style.display = "none";
+                return;
+            }
+
+            noResults.style.display = "none";
+
+            if (viewMode === "grid") {
+                postsGrid.style.display = "grid";
+                postsList.style.display = "none";
+                postsGrid.innerHTML = filtered.map(post => `
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-3 text-xs text-gray-500 mb-3 flex-wrap">
+                                <div class="flex items-center gap-1"><i class="far fa-calendar"></i> ${post.date}</div>
+                                <div class="flex items-center gap-1"><i class="far fa-clock"></i> ${post.readTime}</div>
+                                <div class="flex items-center gap-1"><i class="far fa-eye"></i> ${post.views}</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2">${post.title}</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">${post.excerpt}</p>
+                            <div class="flex flex-wrap gap-2 mb-4">${post.tags.slice(0, 3).map(tag => `<span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">#${tag}</span>`).join("")}</div>
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                                <div class="flex items-center gap-2">
+                                    <div class="h-8 w-8 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">${post.authorAvatar}</div>
+                                    <div class="text-sm font-medium text-gray-900">${post.author}</div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <button class="text-gray-400 hover:text-red-500 transition-colors flex items-center gap-1"><i class="far fa-heart"></i><span class="text-xs">${post.likes}</span></button>
+                                    <button class="text-gray-400 hover:text-indigo-600 transition-colors flex items-center gap-1"><i class="far fa-comment"></i><span class="text-xs">${post.comments}</span></button>
+                                    <button onclick="openModal(${post.id})" class="text-indigo-600 font-medium text-sm flex items-center gap-1">Read More <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join("");
+            } else {
+                postsGrid.style.display = "none";
+                postsList.style.display = "block";
+                postsList.innerHTML = filtered.map(post => `
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col md:flex-row">
+                        <div class="md:w-64 h-48 md:h-auto overflow-hidden"><img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="flex-1 p-5">
+                            <div class="flex items-center gap-3 text-xs text-gray-500 mb-2 flex-wrap">
+                                <div class="flex items-center gap-1"><i class="far fa-calendar"></i> ${post.date}</div>
+                                <div class="flex items-center gap-1"><i class="far fa-clock"></i> ${post.readTime}</div>
+                                <div class="flex items-center gap-1"><i class="far fa-eye"></i> ${post.views}</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">${post.title}</h3>
+                            <p class="text-gray-600 text-sm mb-3">${post.excerpt}</p>
+                            <div class="flex flex-wrap gap-2 mb-3">${post.tags.slice(0, 3).map(tag => `<span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">#${tag}</span>`).join("")}</div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="h-8 w-8 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">${post.authorAvatar}</div>
+                                    <div class="text-sm font-medium text-gray-900">${post.author}</div>
+                                </div>
+                                <button onclick="openModal(${post.id})" class="text-indigo-600 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Read More <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `).join("");
+            }
+        }
+
+        // Open modal
+        function openModal(postId) {
+            selectedPost = blogPosts.find(p => p.id === postId);
+            if (!selectedPost) return;
+
+            document.getElementById("modalImage").src = selectedPost.image;
+            document.getElementById("modalDate").innerText = selectedPost.date;
+            document.getElementById("modalReadTime").innerText = selectedPost.readTime;
+            document.getElementById("modalViews").innerText = selectedPost.views;
+            document.getElementById("modalTitle").innerText = selectedPost.title;
+            document.getElementById("modalAuthor").innerText = selectedPost.author;
+            document.getElementById("modalAuthorRole").innerText = selectedPost.authorRole;
+            document.getElementById("modalAuthorAvatar").innerText = selectedPost.authorAvatar;
+            document.getElementById("modalLikes").innerText = selectedPost.likes;
+            document.getElementById("modalComments").innerText = selectedPost.comments;
+
+            document.getElementById("modalContent").innerHTML = `
+                <p class="text-gray-600 leading-relaxed mb-4">${selectedPost.excerpt}</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            `;
+
+            document.getElementById("modalTags").innerHTML = selectedPost.tags.map(tag => `
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#${tag}</span>
+            `).join("");
+
+            document.getElementById("postModal").style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            document.getElementById("postModal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById("newsletterEmail").value;
+            if (email) {
+                alert("Thank you for subscribing! We'll send updates to " + email);
+                document.getElementById("newsletterEmail").value = "";
+            } else {
+                alert("Please enter a valid email address.");
+            }
+        }
+
+        // Load header and footer
+        function loadHeaderFooter() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('header').innerHTML = data)
+                .catch(error => console.log('Error loading header:', error));
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer').innerHTML = data)
+                .catch(error => console.log('Error loading footer:', error));
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHeaderFooter();
+
+            // Get category from URL
+            const urlCategory = getCategoryFromUrl();
+            activeCategory = urlCategory;
+
+            renderCategories();
+            renderFeatured();
+            renderPosts();
+            updateFilterBanner();
+
+            // Set up search listener
+            document.getElementById("searchInput").addEventListener("input", handleSearch);
+        });
+
+        // Handle back/forward buttons
+        window.addEventListener('popstate', () => {
+            const urlCategory = getCategoryFromUrl();
+            activeCategory = urlCategory;
+            renderCategories();
+            renderFeatured();
+            renderPosts();
+            updateFilterBanner();
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

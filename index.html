@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>BL TECH • Future-Ready Technology Solutions</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Separate CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <!-- ========== MAIN CONTENT (Modern About page layout) ========== -->
+    <main class="main-content">
+        <!-- Hero section with geometric background -->
+        <section class="page-hero">
+            <div class="container hero-content">
+                <span class="hero-badge"><i class="fas fa-rocket"></i> Digital Innovation Partner</span>
+                <h1>About <span class="text-gradient">BL TECH</span></h1>
+                <p class="hero-description">Engineering future-ready technology solutions that transform businesses,
+                    elevate user experiences, and drive sustainable growth.</p>
+            </div>
+            <div class="hero-shapes">
+                <div class="shape shape1"></div>
+                <div class="shape shape2"></div>
+                <div class="shape shape3"></div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Vision, Mission, Values cards -->
+            <div class="content-section">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);"><i
+                                class="fas fa-eye"></i></div>
+                        <h3>Our Vision</h3>
+                        <p>To become the leading technology solutions provider, empowering businesses worldwide with
+                            innovative and scalable digital solutions that drive growth and success.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #22c55e, #10b981);"><i
+                                class="fas fa-bullseye"></i></div>
+                        <h3>Our Mission</h3>
+                        <p>Delivering cutting-edge technology solutions that transform businesses, enhance productivity,
+                            and create lasting value for our clients through innovation and excellence.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"><i
+                                class="fas fa-heart"></i></div>
+                        <h3>Our Values</h3>
+                        <p>Innovation, integrity, customer focus, and continuous learning drive everything we do. We
+                            believe in building long-term partnerships based on trust and results.</p>
+                    </div>
+                </div>
+
+                <!-- Stats counter style -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">150+</span>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">50+</span>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">10+</span>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">24/7</span>
+                        <p>Support</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section (modern glass card) -->
+            <div class="contact-section" id="contactSection">
+                <div class="section-header">
+                    <h2><i class="fas fa-headset" style="color: #2563eb;"></i> Get In Touch</h2>
+                    <p>We'd love to hear about your project. Let's start a conversation.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card"><i class="fas fa-envelope"></i>
+                        <h4>Email Us</h4>
+                        <p><a href="mailto:support@bltech.in">support@bltech.in</a></p>
+                        <p><a href="mailto:info@bltech.in">info@bltech.in</a></p>
+                    </div>
+                    <div class="contact-card"><i class="fas fa-phone"></i>
+                        <h4>Call Us</h4>
+                        <p><a href="tel:+919829691259">+91 9829691259</a></p>
+                        <p>Mon - Sat, 9 AM - 6 PM</p>
+                    </div>
+                    <div class="contact-card"><i class="fas fa-map-marker-alt"></i>
+                        <h4>Visit Us</h4>
+                        <p>Bhilwara, Rajasthan</p>
+                        <p>India - 311001</p>
+                    </div>
+                    <div class="contact-card"><i class="fas fa-comments"></i>
+                        <h4>Live Chat</h4>
+                        <p>Available 24/7</p>
+                        <p>Quick response guaranteed</p>
+                    </div>
+                </div>
+                <form class="quick-contact-form" id="quickContactForm">
+                    <h3 style="margin-bottom: 1rem; color: #0f172a;">Send Us a Message</h3>
+                    <div class="form-row">
+                        <input type="text" id="contactName" placeholder="Your Name" required />
+                        <input type="email" id="contactEmail" placeholder="Your Email" required />
+                    </div>
+                    <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+    </footer>
+
+    <!-- Script to load header -->
+    <script>
+        // Load header from external file
+        fetch('pages/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            })
+            .catch(error => console.log('Error loading header:', error));
+
+        fetch('pages/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.log('Error loading header:', error));
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>About - BL TECH | Engineering the Digital Future</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-slow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animation-delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .animation-delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-1000 {
+            animation-delay: 1s;
+        }
+
+        .delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072')] bg-cover bg-center opacity-10">
+            </div>
+            <div class="relative container mx-auto px-4 py-28 md:py-40">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 animate-fade-in">
+                        <i class="fas fa-sparkle text-teal-300"></i>
+                        <span class="text-white font-semibold text-sm tracking-wide">INNOVATION UNLEASHED</span>
+                    </div>
+
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
+                        Engineering the
+                        <span class="bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent"> Digital
+                            Future</span>
+                    </h1>
+
+                    <p
+                        class="text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up animation-delay-200">
+                        We are a global collective of architects, creators, and visionaries
+                        building transformative technology solutions for the world's leading enterprises.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
+                        <button onclick="openProjectForm()"
+                            class="group px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                            Partner With Us
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button
+                            class="px-8 py-4 border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+                            Explore Our Work
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curved bottom edge -->
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 120L1440 0V120H0Z" fill="#f8fafc" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="relative -mt-16 z-20 px-4">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="statsContainer">
+                    <!-- Stats injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission/Vision/Values with Tabs -->
+        <section class="py-28 relative">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                            Our <span
+                                class="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Guiding
+                                Philosophy</span>
+                        </h2>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                            The principles that drive our innovation, partnerships, and success.
+                        </p>
+                    </div>
+
+                    <!-- Tab Navigation -->
+                    <div class="flex flex-wrap justify-center gap-4 mb-12">
+                        <button onclick="setActiveTab('mission')" id="tabMission"
+                            class="group flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 bg-white text-gray-700 hover:text-teal-600 hover:bg-gray-50 border border-gray-200 hover:border-teal-200">
+                            <i class="fas fa-bullseye"></i> Our Mission
+                        </button>
+                        <button onclick="setActiveTab('vision')" id="tabVision"
+                            class="group flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 bg-white text-gray-700 hover:text-teal-600 hover:bg-gray-50 border border-gray-200 hover:border-teal-200">
+                            <i class="fas fa-eye"></i> Our Vision
+                        </button>
+                        <button onclick="setActiveTab('values')" id="tabValues"
+                            class="group flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 bg-white text-gray-700 hover:text-teal-600 hover:bg-gray-50 border border-gray-200 hover:border-teal-200">
+                            <i class="fas fa-gem"></i> Core Values
+                        </button>
+                    </div>
+
+                    <!-- Content Cards -->
+                    <div id="missionContent"
+                        class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+                        <div class="relative">
+                            <div
+                                class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-b from-teal-500/5 to-cyan-500/5 rounded-full blur-2xl">
+                            </div>
+                            <div class="relative p-10 md:p-14 text-center">
+                                <div
+                                    class="h-24 w-24 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center mx-auto mb-8 shadow-xl">
+                                    <i class="fas fa-bullseye text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                                    To empower enterprises with intelligent, scalable, and future-ready technology
+                                    solutions
+                                    that drive efficiency, accelerate growth, and create lasting competitive advantage
+                                    in a digital-first world.
+                                </p>
+                                <div
+                                    class="mt-8 p-6 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl inline-block max-w-2xl mx-auto">
+                                    <p class="text-teal-800 font-medium">
+                                        "We don't just build software — we build strategic advantages that stand the
+                                        test of time."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="visionContent"
+                        class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+                        style="display: none;">
+                        <div class="relative">
+                            <div
+                                class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-full blur-2xl">
+                            </div>
+                            <div class="relative p-10 md:p-14 text-center">
+                                <div
+                                    class="h-24 w-24 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center mx-auto mb-8 shadow-xl">
+                                    <i class="fas fa-eye text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Vision</h3>
+                                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                                    To become the world's most trusted technology partner, recognized for pioneering
+                                    solutions
+                                    that redefine industries, foster sustainable innovation, and unlock human potential
+                                    through the power of digital transformation.
+                                </p>
+                                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                                    <div class="p-4">
+                                        <div
+                                            class="h-12 w-12 rounded-xl bg-indigo-100 flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-globe text-indigo-600"></i>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Global Impact</p>
+                                    </div>
+                                    <div class="p-4">
+                                        <div
+                                            class="h-12 w-12 rounded-xl bg-purple-100 flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-infinity text-purple-600"></i>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Sustainable Innovation</p>
+                                    </div>
+                                    <div class="p-4">
+                                        <div
+                                            class="h-12 w-12 rounded-xl bg-pink-100 flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-crown text-pink-600"></i>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Industry Leadership</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="valuesContent"
+                        class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+                        style="display: none;">
+                        <div class="p-10 md:p-14">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-10 text-center">Our Core Values</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="valuesGrid">
+                                <!-- Values injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section class="py-24 bg-gradient-to-br from-gray-50 to-slate-50 relative overflow-hidden">
+            <div class="container mx-auto px-4 relative">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Core
+                        Competencies</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+                        Technology <span
+                            class="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Excellence</span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Deep expertise across the most critical domains shaping the future of enterprise technology.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="expertiseGrid">
+                    <!-- Expertise injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="py-24 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070')] bg-cover bg-center opacity-5">
+            </div>
+            <div class="relative container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span
+                        class="text-teal-300 font-semibold text-sm uppercase tracking-wider mb-3 block">Leadership</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-5">
+                        Visionaries Behind <span
+                            class="bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">The
+                            Vision</span>
+                    </h2>
+                    <p class="text-xl text-slate-300">A passionate leadership team driving innovation, culture, and
+                        client success.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="leadershipGrid">
+                    <!-- Leadership team injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By - Client Logos -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <p class="text-center text-gray-500 font-semibold text-sm uppercase tracking-wider mb-8">Trusted by
+                    industry leaders worldwide</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-16" id="clientLogos">
+                    <!-- Client logos injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-gradient-to-r from-slate-900 via-teal-900 to-slate-900 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070')] bg-cover bg-center opacity-5">
+            </div>
+            <div class="relative container mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Build the Future?</h2>
+                <p class="text-xl text-teal-100 mb-10 max-w-2xl mx-auto">
+                    Join hundreds of enterprises that have transformed their operations with our cutting-edge solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                    <button onclick="openProjectForm()"
+                        class="group px-10 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 text-lg">
+                        Start Your Journey
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <button
+                        class="px-10 py-4 border-2 border-teal-400/50 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-sm text-lg">
+                        Download Company Profile
+                    </button>
+                </div>
+                <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm text-teal-200">
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle"></i> 24/7 Global Support</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle"></i> 100% Data Security</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle"></i> Agile Delivery</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- Project Form Modal -->
+    <div id="projectFormModal"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        style="display: none;">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-gray-900">Start Your Project</h3>
+                <button onclick="closeProjectForm()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form id="projectForm" onsubmit="handleFormSubmit(event)">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                        <input type="text" id="name" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                        <input type="email" id="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Project Details *</label>
+                        <textarea id="message" rows="4" required placeholder="Tell us about your project..."
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Stats Data
+        const stats = [
+            { icon: "fa-users", value: "500+", label: "Global Experts", description: "Top-tier talent worldwide", color: "from-blue-500 to-cyan-500" },
+            { icon: "fa-building", value: "1500+", label: "Projects Delivered", description: "Across industries", color: "from-green-500 to-emerald-500" },
+            { icon: "fa-trophy", value: "25+", label: "Industry Awards", description: "Innovation & excellence", color: "from-purple-500 to-pink-500" },
+            { icon: "fa-globe", value: "12+", label: "Global Offices", description: "Strategic locations", color: "from-orange-500 to-red-500" }
+        ];
+
+        // Core Values
+        const coreValues = [
+            { icon: "fa-lightbulb", title: "Innovation at Core", description: "We relentlessly pursue breakthrough ideas and cutting-edge technologies to solve complex challenges.", color: "text-amber-500", bg: "bg-amber-50" },
+            { icon: "fa-shield-alt", title: "Uncompromising Integrity", description: "We build trust through transparency, ethical practices, and delivering on our commitments.", color: "text-blue-500", bg: "bg-blue-50" },
+            { icon: "fa-chart-line", title: "Excellence Driven", description: "We are committed to superior quality, continuous improvement, and exceeding expectations.", color: "text-emerald-500", bg: "bg-emerald-50" },
+            { icon: "fa-handshake", title: "Collaborative Partnership", description: "We work as an extension of your team, fostering deep collaboration for shared success.", color: "text-indigo-500", bg: "bg-indigo-50" },
+            { icon: "fa-stopwatch", title: "Agility & Speed", description: "We move fast, adapt quickly, and deliver value without compromising quality.", color: "text-rose-500", bg: "bg-rose-50" },
+            { icon: "fa-users", title: "People First", description: "Our people are our strength; we invest in their growth, well-being, and passion.", color: "text-teal-500", bg: "bg-teal-50" }
+        ];
+
+        // Expertise
+        const expertise = [
+            { name: "AI & Machine Learning", icon: "fa-microchip", color: "text-indigo-600", bg: "bg-indigo-50" },
+            { name: "Cloud & DevOps", icon: "fa-cloud", color: "text-sky-600", bg: "bg-sky-50" },
+            { name: "Enterprise Software", icon: "fa-building", color: "text-emerald-600", bg: "bg-emerald-50" },
+            { name: "Mobile Experience", icon: "fa-mobile-alt", color: "text-orange-600", bg: "bg-orange-50" },
+            { name: "Web3 & Blockchain", icon: "fa-network-wired", color: "text-purple-600", bg: "bg-purple-50" },
+            { name: "Data Analytics", icon: "fa-database", color: "text-cyan-600", bg: "bg-cyan-50" },
+            { name: "UI/UX Design", icon: "fa-palette", color: "text-pink-600", bg: "bg-pink-50" },
+            { name: "Digital Transformation", icon: "fa-bolt", color: "text-yellow-600", bg: "bg-yellow-50" }
+        ];
+
+        // Leadership Team
+        const leadershipTeam = [
+            { name: "Sonu Kumar", role: "Chief Executive Officer", bio: "2+ years of tech leadership, previously at Google & Microsoft. Driving innovation with purpose.", image: "https://ui-avatars.com/api/?name=Michael+Chen&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
+            { name: "Sanjay Bairwa", role: "Chief Technology Officer", bio: "Former Principal Architect at AWS, expert in scalable cloud solutions and AI infrastructure.", image: "https://ui-avatars.com/api/?name=Sarah+Williams&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
+            { name: "David Rodriguez", role: "VP of Engineering", bio: "Led global engineering teams at IBM, passionate about building high-performance cultures.", image: "https://ui-avatars.com/api/?name=David+Rodriguez&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" },
+            { name: "Priya Patel", role: "Chief Product Officer", bio: "Product visionary with successful exits, focused on user-centric design and market fit.", image: "https://ui-avatars.com/api/?name=Priya+Patel&background=0D9488&color=fff&bold=true&size=120", linkedin: "#", twitter: "#" }
+        ];
+
+        // Client Logos
+        const clientLogos = [
+            "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/6/6c/Spotify_Logo.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
+        ];
+
+        let activeTab = "mission";
+
+        // Set active tab
+        function setActiveTab(tab) {
+            activeTab = tab;
+
+            // Update button styles
+            const missionBtn = document.getElementById("tabMission");
+            const visionBtn = document.getElementById("tabVision");
+            const valuesBtn = document.getElementById("tabValues");
+
+            [missionBtn, visionBtn, valuesBtn].forEach(btn => {
+                btn.classList.remove("bg-gradient-to-r", "from-teal-600", "to-cyan-600", "text-white", "shadow-xl", "shadow-teal-500/30", "scale-105");
+                btn.classList.add("bg-white", "text-gray-700", "hover:text-teal-600", "hover:bg-gray-50", "border", "border-gray-200");
+            });
+
+            let activeBtn = tab === "mission" ? missionBtn : (tab === "vision" ? visionBtn : valuesBtn);
+            activeBtn.classList.remove("bg-white", "text-gray-700", "hover:text-teal-600", "hover:bg-gray-50", "border", "border-gray-200");
+            activeBtn.classList.add("bg-gradient-to-r", "from-teal-600", "to-cyan-600", "text-white", "shadow-xl", "shadow-teal-500/30", "scale-105");
+
+            // Show/hide content
+            document.getElementById("missionContent").style.display = tab === "mission" ? "block" : "none";
+            document.getElementById("visionContent").style.display = tab === "vision" ? "block" : "none";
+            document.getElementById("valuesContent").style.display = tab === "values" ? "block" : "none";
+        }
+
+        // Render functions
+        function renderStats() {
+            const container = document.getElementById("statsContainer");
+            container.innerHTML = stats.map(stat => `
+                <div class="group relative bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-teal-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="h-16 w-16 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-5 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas ${stat.icon} text-white text-2xl"></i>
+                    </div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">${stat.value}</div>
+                    <div class="text-lg font-bold text-gray-800 mb-1">${stat.label}</div>
+                    <div class="text-sm text-gray-500">${stat.description}</div>
+                </div>
+            `).join("");
+        }
+
+        function renderValues() {
+            const container = document.getElementById("valuesGrid");
+            container.innerHTML = coreValues.map(value => `
+                <div class="group bg-white rounded-2xl border border-gray-100 p-6 hover:border-teal-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-14 w-14 rounded-xl ${value.bg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas ${value.icon} ${value.color} text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">${value.title}</h4>
+                    <p class="text-gray-500 leading-relaxed">${value.description}</p>
+                </div>
+            `).join("");
+        }
+
+        function renderExpertise() {
+            const container = document.getElementById("expertiseGrid");
+            container.innerHTML = expertise.map(skill => `
+                <div class="group bg-white rounded-2xl p-6 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-default border border-gray-100">
+                    <div class="h-14 w-14 rounded-xl ${skill.bg} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas ${skill.icon} ${skill.color} text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg">${skill.name}</h3>
+                </div>
+            `).join("");
+        }
+
+        function renderLeadership() {
+            const container = document.getElementById("leadershipGrid");
+            container.innerHTML = leadershipTeam.map((member, idx) => `
+                <div class="group bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden hover:bg-white/20 transition-all duration-500 hover:-translate-y-2 border border-white/20">
+                    <div class="relative overflow-hidden">
+                        <img src="${member.image}" alt="${member.name}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-white mb-1">${member.name}</h3>
+                        <p class="text-teal-300 font-medium mb-3">${member.role}</p>
+                        <p class="text-slate-300 text-sm mb-4">${member.bio}</p>
+                        <div class="flex justify-center gap-3">
+                            <a href="${member.linkedin}" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="${member.twitter}" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function renderClientLogos() {
+            const container = document.getElementById("clientLogos");
+            container.innerHTML = clientLogos.map(logo => `
+                <img src="${logo}" alt="Client logo" class="h-8 md:h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+            `).join("");
+        }
+
+        // Modal functions
+        function openProjectForm() {
+            document.getElementById("projectFormModal").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeProjectForm() {
+            document.getElementById("projectFormModal").style.display = "none";
+            document.body.style.overflow = "auto";
+            document.getElementById("projectForm").reset();
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert("Thank you! Our team will get back to you within 24 hours.");
+            closeProjectForm();
+        }
+
+        // Load header and footer
+        function loadHeaderFooter() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('header').innerHTML = data)
+                .catch(error => console.log('Error loading header:', error));
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer').innerHTML = data)
+                .catch(error => console.log('Error loading footer:', error));
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHeaderFooter();
+            renderStats();
+            renderValues();
+            renderExpertise();
+            renderTimeline();
+            renderLeadership();
+            renderClientLogos();
+            setActiveTab("mission");
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

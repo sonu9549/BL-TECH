@@ -1,0 +1,147 @@
+<!-- ========== FOOTER SECTION ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>BL TECH</h4>
+                <p style="font-size: 14px; opacity: 0.9; line-height: 1.6;">
+                    Technology solutions for modern businesses. Innovate, transform, succeed.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" style="color: #60a5fa; margin-right: 1rem;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="color: #60a5fa; margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: #60a5fa; margin-right: 1rem;"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" style="color: #60a5fa;"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="pages/about.html">About Us</a></li>
+                    <li><a href="pages/services.html">Services</a></li>
+                    <li><a href="pages/products.html">Products</a></li>
+                    <li><a href="pages/blog.html">Blog</a></li>
+                    <li><a href="pages/careers.html">Careers</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="pages/services.html#web">Web Development</a></li>
+                    <li><a href="pages/services.html#mobile">Mobile Apps</a></li>
+                    <li><a href="pages/services.html#cloud">Cloud Solutions</a></li>
+                    <li><a href="pages/services.html#design">UI/UX Design</a></li>
+                    <li><a href="pages/services.html#consulting">IT Consulting</a></li>
+                    <li><a href="pages/services.html#security">Cybersecurity</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Bhilwara, Rajasthan</li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+919829691259">+91 9829691259</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:support@bltech.in">support@bltech.in</a></li>
+                    <li><i class="fas fa-clock"></i> Mon - Sat, 9 AM - 6 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BL TECH. All rights reserved. | Designed with <i class="fas fa-heart"
+                    style="color: #ef4444;"></i> by BL TECH Team</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer CSS (already in main style.css, but included for standalone use) -->
+<style>
+    .footer {
+        background: var(--gray-900, #0f172a);
+        color: var(--gray-300, #cbd5e1);
+        padding: 4rem 0 2rem;
+        margin-top: 4rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-column h4 {
+        color: var(--white, #ffffff);
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    .footer-column p {
+        font-size: 14px;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .footer-column ul li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-column ul li i {
+        color: var(--primary-light, #3b82f6);
+        width: 20px;
+    }
+
+    .footer-column ul li a {
+        color: var(--gray-300, #cbd5e1);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+        color: var(--white, #ffffff);
+        padding-left: 4px;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid var(--gray-700, #374151);
+        padding-top: 2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--gray-500, #6b7280);
+    }
+
+    .footer-bottom i {
+        color: #ef4444;
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .footer-column ul li {
+            justify-content: center;
+        }
+
+        .footer-bottom {
+            font-size: 0.8rem;
+        }
+    }
+</style>

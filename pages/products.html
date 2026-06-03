@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Products - BL TECH | Software Solutions That Scale With You</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .delay-1000 {
+            animation-delay: 1s;
+        }
+
+        /* Custom scrollbar for modal */
+        .modal-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .modal-scroll::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .modal-scroll::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <main>
+        <!-- Hero Section - Modern Glassmorphism -->
+        <section class="relative overflow-hidden">
+            <!-- Animated Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600">
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070')] bg-cover bg-center opacity-10">
+                </div>
+                <div class="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                <div
+                    class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000">
+                </div>
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl">
+                </div>
+            </div>
+
+            <div class="relative container mx-auto px-4 py-24 md:py-32">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Floating Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-float">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <span class="text-white font-semibold text-sm tracking-wide">INNOVATIVE PRODUCT SUITE</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                        <span class="block">Software Solutions</span>
+                        <span
+                            class="bg-gradient-to-r from-yellow-200 via-pink-200 to-cyan-200 bg-clip-text text-transparent">
+                            That Scale With You
+                        </span>
+                    </h1>
+
+                    <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+                        Discover our suite of innovative software products designed to solve complex business
+                        challenges,
+                        drive growth, and deliver exceptional ROI.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                        <button onclick="openTrialForm()"
+                            class="group px-8 py-4 bg-white text-purple-600 rounded-2xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fas fa-gift"></i>
+                            Start Free Trial
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button
+                            class="px-8 py-4 border-2 border-white/30 text-white rounded-2xl font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                            <i class="fas fa-play"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap justify-center gap-8 text-white/70 text-sm">
+                        <div class="flex items-center gap-2"><i class="fas fa-shield-alt"></i>30-Day Guarantee</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i>No Credit Card</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-users"></i>24/7 Support</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-trophy"></i>Award Winning</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curved Bottom -->
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 120L1440 0V120H0Z" fill="#f8fafc" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Category Navigation -->
+        <section class="sticky top-0 z-40 py-6 bg-white/80 backdrop-blur-md border-b border-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-center gap-3" id="categoryTabs">
+                    <!-- Categories injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="py-20 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div id="productsGrid" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <!-- Products injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <div
+                            class="relative w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-users text-white text-3xl"></i>
+                        </div>
+                        <div class="text-3xl font-extrabold text-gray-900 mb-1">500+</div>
+                        <div class="text-gray-500 font-medium">Active Customers</div>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="relative w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shield-alt text-white text-3xl"></i>
+                        </div>
+                        <div class="text-3xl font-extrabold text-gray-900 mb-1">99.9%</div>
+                        <div class="text-gray-500 font-medium">Uptime SLA</div>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="relative w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-headset text-white text-3xl"></i>
+                        </div>
+                        <div class="text-3xl font-extrabold text-gray-900 mb-1">24/7</div>
+                        <div class="text-gray-500 font-medium">Premium Support</div>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="relative w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-star text-white text-3xl"></i>
+                        </div>
+                        <div class="text-3xl font-extrabold text-gray-900 mb-1">4.9/5</div>
+                        <div class="text-gray-500 font-medium">Customer Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070')] bg-cover bg-center opacity-10">
+                </div>
+            </div>
+
+            <div class="relative container mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+                <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+                    Join thousands of successful businesses already using our products to scale and grow.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <button onclick="openTrialForm()"
+                        class="group px-10 py-4 bg-white text-purple-600 rounded-2xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-lg">
+                        <i class="fas fa-gift"></i>
+                        Start Free Trial
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <button
+                        class="px-10 py-4 border-2 border-white/30 text-white rounded-2xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-sm flex items-center justify-center gap-2 text-lg">
+                        <i class="fas fa-play"></i>
+                        Schedule Demo
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-white/70 text-sm">
+                    <div class="flex items-center gap-2"><i class="fas fa-shield-alt"></i>30-Day Money Back</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i>No Credit Card Required
+                    </div>
+                    <div class="flex items-center gap-2"><i class="fas fa-users"></i>Free Onboarding Support</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Product Inquiry Form Modal -->
+    <div id="productFormModal" class="fixed inset-0 z-50 items-center justify-center p-4" style="display: none;">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeProductForm()"></div>
+        <div class="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto z-10 mx-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-gray-900">Get Started with <span id="productName">Product</span></h3>
+                <button onclick="closeProductForm()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form id="productForm" onsubmit="handleProductSubmit(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                            <input type="text" id="prodName" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                            <input type="email" id="prodEmail" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="prodPhone"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Company Name</label>
+                            <input type="text" id="prodCompany"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Message *</label>
+                        <textarea id="prodMessage" rows="4" required placeholder="Tell us about your requirements..."
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free Trial Form Modal -->
+    <div id="trialFormModal" class="fixed inset-0 z-50 items-center justify-center p-4" style="display: none;">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeTrialForm()"></div>
+        <div class="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto z-10 mx-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-gray-900">Start Your Free Trial</h3>
+                <button onclick="closeTrialForm()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form id="trialForm" onsubmit="handleTrialSubmit(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                            <input type="text" id="trialName" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                            <input type="email" id="trialEmail" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="trialPhone"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Company Name</label>
+                            <input type="text" id="trialCompany"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Number of Employees</label>
+                            <select id="trialEmployees"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option value="">Select</option>
+                                <option>1-10</option>
+                                <option>11-50</option>
+                                <option>51-200</option>
+                                <option>201-500</option>
+                                <option>500+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Timeline</label>
+                            <select id="trialTimeline"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option value="">Select</option>
+                                <option>Immediate</option>
+                                <option>Within 1 month</option>
+                                <option>Within 3 months</option>
+                                <option>Just exploring</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+                        Start Free Trial
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="detailsModal" class="fixed inset-0 z-50 overflow-y-auto" style="display: none;">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-80 backdrop-blur-sm"
+                onclick="closeDetailsModal()"></div>
+            <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-3xl shadow-2xl sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full"
+                id="detailsModalContent">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Products Data
+        const products = [
+            {
+                id: 1, name: "CRM Pro", category: "saas", tagline: "AI-Powered Customer Relationships",
+                description: "Complete customer relationship management solution with AI-powered insights and automation.",
+                longDescription: "CRM Pro is an all-in-one customer relationship management platform that leverages artificial intelligence to help businesses streamline their sales, marketing, and customer service operations.",
+                price: "$500", period: "per month", setupFee: "$1,000", rating: 4.8, reviews: 1247, users: "50+",
+                popular: true, trending: true, gradient: "from-blue-500 to-cyan-500", icon: "fa-bullseye", badge: "Most Popular", trial: "30-day free trial", highlightColor: "blue",
+                features: ["AI-Powered Lead Scoring", "Automated Sales Pipeline", "Customer Support Suite", "Advanced Reporting", "Mobile App", "API Access", "Email Marketing Integration"],
+                integrations: ["Salesforce", "HubSpot", "Mailchimp", "Slack", "Zapier", "Microsoft Teams"],
+                support: "24/7 Priority Support", training: "Free onboarding & training sessions", security: "GDPR Compliant | SOC 2 Type II"
+            },
+            {
+                id: 2, name: "Inventory & Production ERP", category: "enterprise", tagline: "End-to-End Business Management",
+                description: "Comprehensive enterprise resource planning for growing businesses with global operations.",
+                longDescription: "Our Inventory & Production ERP system provides end-to-end business management solutions for manufacturing and distribution companies.",
+                price: "$1,000", period: "per month", setupFee: "$5,000", rating: 4.6, reviews: 42, users: "20+",
+                popular: true, trending: false, gradient: "from-purple-500 to-pink-500", icon: "fa-database", badge: "Enterprise Ready", trial: "14-day free trial", highlightColor: "purple",
+                features: ["Inventory Management", "Accounting & Finance", "HR & Payroll", "Supply Chain Management", "Multi-Currency Support", "Custom Modules"],
+                integrations: ["QuickBooks", "SAP", "Oracle", "Shopify", "Amazon", "WooCommerce"],
+                support: "Dedicated Account Manager", training: "On-site training available", security: "ISO 27001 Certified"
+            },
+            {
+                id: 3, name: "School ERP", category: "enterprise", tagline: "Digital Campus Transformation",
+                description: "Comprehensive education management system for educational institutions.",
+                longDescription: "School ERP is a complete digital transformation solution for educational institutions. Manage students, teachers, parents, academics, examinations, fees, and communications.",
+                price: "$8,000", period: "per year", setupFee: "$2,000", rating: 4.7, reviews: 90, users: "10+",
+                popular: true, trending: true, gradient: "from-indigo-500 to-purple-500", icon: "fa-book", badge: "Education Focused", trial: "30-day free trial", highlightColor: "indigo",
+                features: ["Student Management System", "Academic Progress Tracking", "HR & Payroll", "Fee Management", "Exam & Grade Management", "Parent-Teacher Communication"],
+                integrations: ["Google Classroom", "Zoom", "Microsoft Teams", "Payment Gateways"],
+                support: "24/5 Email & Chat Support", training: "Teacher & Staff Training Included", security: "Student Data Protection Compliant"
+            },
+            {
+                id: 4, name: "Analytics Dashboard", category: "analytics", tagline: "Data-Driven Decision Making",
+                description: "Real-time business intelligence with predictive analytics and customizable dashboards.",
+                longDescription: "Transform your raw data into actionable insights with our powerful Analytics Dashboard. Connect multiple data sources and create stunning visualizations.",
+                price: "$1,000", period: "per month", setupFee: "$1,500", rating: 4.9, reviews: 32, users: "20+",
+                popular: false, trending: true, gradient: "from-orange-500 to-red-500", icon: "fa-chart-line", badge: "Editor's Choice", trial: "14-day free trial", highlightColor: "orange",
+                features: ["Real-time Data Visualization", "Custom Reports Builder", "Predictive Analytics", "API Integration", "Team Collaboration", "Export Any Format"],
+                integrations: ["Google Analytics", "Salesforce", "Shopify", "MySQL", "PostgreSQL", "MongoDB", "BigQuery"],
+                support: "Business Hours Support", training: "Video tutorials included", security: "End-to-end Encryption"
+            }
+        ];
+
+        const categories = [
+            { id: "all", label: "All Products", icon: "fa-compass", gradient: "from-indigo-500 to-purple-500" },
+            { id: "saas", label: "SaaS Solutions", icon: "fa-cloud", gradient: "from-cyan-500 to-blue-500" },
+            { id: "enterprise", label: "Enterprise", icon: "fa-crown", gradient: "from-purple-500 to-pink-500" },
+            { id: "analytics", label: "Analytics", icon: "fa-chart-line", gradient: "from-orange-500 to-red-500" }
+        ];
+
+        let activeCategory = "all";
+        let currentProduct = null;
+        let selectedProduct = null;
+
+        // Render category tabs
+        function renderCategories() {
+            const container = document.getElementById("categoryTabs");
+            container.innerHTML = categories.map(cat => `
+                <button onclick="setActiveCategory('${cat.id}')" 
+                    class="group relative px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center gap-2 overflow-hidden ${activeCategory === cat.id ? 'text-white shadow-lg' : 'text-gray-700 hover:text-gray-900 bg-gray-100 hover:bg-gray-200'}"
+                >
+                    ${activeCategory === cat.id ? `<div class="absolute inset-0 bg-gradient-to-r ${cat.gradient} opacity-100"></div>` : ''}
+                    <i class="fas ${cat.icon} relative z-10"></i>
+                    <span class="relative z-10">${cat.label}</span>
+                    ${activeCategory === cat.id ? '<span class="absolute -top-2 -right-2 w-2 h-2 bg-white rounded-full animate-ping"></span>' : ''}
+                </button>
+            `).join("");
+        }
+
+        function setActiveCategory(categoryId) {
+            activeCategory = categoryId;
+            if (categoryId === "all") {
+                window.history.pushState({}, "", "products.html");
+            } else {
+                window.history.pushState({}, "", `products.html?category=${categoryId}`);
+            }
+            renderCategories();
+            renderProducts();
+        }
+
+        function renderProducts() {
+            const filtered = activeCategory === "all" ? products : products.filter(p => p.category === activeCategory);
+            const container = document.getElementById("productsGrid");
+
+            container.innerHTML = filtered.map((product, idx) => `
+                <div class="group relative" onmouseenter="setHoveredCard(${idx})" onmouseleave="setHoveredCard(null)">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r ${product.gradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                    <div class="relative bg-white rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3 shadow-lg hover:shadow-2xl">
+                        <div class="absolute top-4 left-4 z-20 flex gap-2">
+                            ${product.popular ? `<span class="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-xl shadow-lg flex items-center gap-1"><i class="fas fa-crown text-xs"></i> ${product.badge}</span>` : ''}
+                            ${product.trending && !product.popular ? `<span class="px-3 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-bold rounded-xl shadow-lg flex items-center gap-1"><i class="fas fa-bolt text-xs"></i> Trending</span>` : ''}
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br ${product.gradient} flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas ${product.icon} text-white text-3xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-3xl font-extrabold text-gray-900">${product.price}</div>
+                                    <div class="text-gray-400 text-sm">${product.period}</div>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">${product.name}</h3>
+                            <p class="text-sm text-purple-600 font-medium mb-3">${product.tagline}</p>
+                            <p class="text-gray-500 leading-relaxed mb-6">${product.description}</p>
+                            <div class="space-y-2 mb-6">
+                                ${product.features.slice(0, 3).map(f => `<div class="flex items-center text-sm text-gray-600"><i class="fas fa-check-circle text-${product.highlightColor}-500 mr-2"></i> ${f}</div>`).join("")}
+                                ${product.features.length > 3 ? `<div class="text-xs text-gray-400 ml-6">+${product.features.length - 3} more features</div>` : ''}
+                            </div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-2">
+                                    <div class="flex">${'<i class="fas fa-star text-yellow-400"></i>'.repeat(Math.floor(product.rating))}</div>
+                                    <span class="text-sm font-semibold text-gray-700">${product.rating}</span>
+                                    <span class="text-xs text-gray-400">(${product.reviews})</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500"><i class="fas fa-users mr-1"></i>${product.users} users</div>
+                            </div>
+                            <div class="flex gap-3">
+                                <button onclick="openProductForm('${product.name}')" class="flex-1 bg-gradient-to-r ${product.gradient} text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-lg transition-all group/btn">
+                                    <i class="fas fa-shopping-cart"></i> Get Started <i class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                                </button>
+                                <button onclick="openDetailsModal(${product.id})" class="w-12 h-12 border-2 border-gray-200 rounded-xl flex items-center justify-center hover:border-gray-300 hover:bg-gray-50 transition-all group/eye">
+                                    <i class="fas fa-eye text-gray-500"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="h-1 bg-gradient-to-r ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function setHoveredCard(idx) {
+            // For hover effect
+        }
+
+        function openProductForm(productName) {
+            currentProduct = productName;
+            document.getElementById("productName").innerText = productName;
+            document.getElementById("productFormModal").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeProductForm() {
+            document.getElementById("productFormModal").style.display = "none";
+            document.body.style.overflow = "auto";
+            document.getElementById("productForm").reset();
+        }
+
+        function openTrialForm() {
+            document.getElementById("trialFormModal").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeTrialForm() {
+            document.getElementById("trialFormModal").style.display = "none";
+            document.body.style.overflow = "auto";
+            document.getElementById("trialForm").reset();
+        }
+
+        function openDetailsModal(productId) {
+            selectedProduct = products.find(p => p.id === productId);
+            const modalContent = document.getElementById("detailsModalContent");
+
+            modalContent.innerHTML = `
+                <div class="relative bg-gradient-to-r ${selectedProduct.gradient} px-8 py-6">
+                    <button onclick="closeDetailsModal()" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors bg-white/10 rounded-full p-1">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                    <div class="flex items-center gap-5">
+                        <div class="h-20 w-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-xl">
+                            <i class="fas ${selectedProduct.icon} text-white text-4xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold text-white">${selectedProduct.name}</h2>
+                            <p class="text-white/70 text-sm mt-1">${selectedProduct.tagline}</p>
+                            <div class="flex items-center gap-3 mt-2">
+                                <div class="flex items-center">${'<i class="fas fa-star text-yellow-400 text-sm"></i>'.repeat(Math.floor(selectedProduct.rating))}<span class="ml-2 text-white text-sm">${selectedProduct.rating}</span></div>
+                                <span class="text-white/50 text-sm">(${selectedProduct.reviews} reviews)</span>
+                                ${selectedProduct.badge ? `<span class="px-2 py-0.5 bg-white/20 rounded-full text-white text-xs">${selectedProduct.badge}</span>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 py-6 max-h-[60vh] overflow-y-auto modal-scroll">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2"><i class="fas fa-infinity text-purple-600"></i> Overview</h3>
+                                <p class="text-gray-600 leading-relaxed">${selectedProduct.longDescription}</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Key Features</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">${selectedProduct.features.map(f => `<div class="flex items-center text-gray-700 bg-gray-50 p-2 rounded-lg"><i class="fas fa-check-circle text-${selectedProduct.highlightColor}-500 mr-2"></i><span class="text-sm">${f}</span></div>`).join("")}</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2"><i class="fas fa-layer-group text-blue-500"></i> Integrations</h3>
+                                <div class="flex flex-wrap gap-2">${selectedProduct.integrations.map(i => `<span class="px-3 py-1.5 bg-gradient-to-r from-gray-100 to-gray-50 rounded-xl text-sm text-gray-700 border border-gray-200">${i}</span>`).join("")}</div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-1 space-y-6">
+                            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 shadow-lg">
+                                <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2"><i class="fas fa-dollar-sign text-green-600"></i> Pricing</h3>
+                                <div class="mb-4"><span class="text-4xl font-extrabold text-gray-900">${selectedProduct.price}</span><span class="text-gray-500">/${selectedProduct.period}</span></div>
+                                ${selectedProduct.setupFee ? `<p class="text-sm text-gray-500 mb-4">One-time setup: ${selectedProduct.setupFee}</p>` : ''}
+                                <hr class="my-4 border-gray-200">
+                                <div class="space-y-3"><div class="flex items-center gap-2 text-sm"><i class="fas fa-calendar text-purple-600"></i><span>${selectedProduct.trial}</span></div><div class="flex items-center gap-2 text-sm"><i class="fas fa-headset text-purple-600"></i><span>${selectedProduct.support}</span></div><div class="flex items-center gap-2 text-sm"><i class="fas fa-sync-alt text-purple-600"></i><span>${selectedProduct.training}</span></div><div class="flex items-center gap-2 text-sm"><i class="fas fa-lock text-purple-600"></i><span>${selectedProduct.security}</span></div></div>
+                            </div>
+                            <div class="space-y-3">
+                                <button onclick="closeDetailsModal(); openProductForm('${selectedProduct.name}')" class="w-full bg-gradient-to-r ${selectedProduct.gradient} text-white py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all"><i class="fas fa-shopping-cart"></i> Get Started Now</button>
+                                <button class="w-full border-2 border-gray-300 text-gray-700 py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 hover:border-purple-400 hover:text-purple-600 transition-all"><i class="fas fa-play"></i> Watch Demo Video</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-8 py-4 border-t border-gray-100 rounded-b-3xl">
+                    <div class="flex justify-between items-center">
+                        <div class="text-sm text-gray-500 flex items-center gap-2"><i class="fas fa-heart text-red-400"></i><span>Need help? Contact our sales team</span></div>
+                        <div class="flex gap-3">
+                            <button onclick="closeDetailsModal(); openTrialForm()" class="px-5 py-2 text-purple-600 font-semibold hover:bg-purple-50 rounded-xl transition-all">Start Free Trial</button>
+                            <button onclick="closeDetailsModal()" class="px-5 py-2 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all">Close</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("detailsModal").style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeDetailsModal() {
+            document.getElementById("detailsModal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        function handleProductSubmit(e) {
+            e.preventDefault();
+            alert(`Thank you for your interest in ${currentProduct}! We'll contact you soon.`);
+            closeProductForm();
+        }
+
+        function handleTrialSubmit(e) {
+            e.preventDefault();
+            alert("Thank you for requesting a free trial! We'll contact you within 24 hours.");
+            closeTrialForm();
+        }
+
+        function loadHeaderFooter() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('header').innerHTML = data)
+                .catch(error => console.log('Error loading header:', error));
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer').innerHTML = data)
+                .catch(error => console.log('Error loading footer:', error));
+        }
+
+        // Get URL parameter
+        function getCategoryFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("category") || "all";
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHeaderFooter();
+            const urlCategory = getCategoryFromUrl();
+            activeCategory = urlCategory;
+            renderCategories();
+            renderProducts();
+        });
+
+        // Handle back/forward buttons
+        window.addEventListener('popstate', () => {
+            const urlCategory = getCategoryFromUrl();
+            activeCategory = urlCategory;
+            renderCategories();
+            renderProducts();
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

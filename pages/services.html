@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Services - BL TECH | Technology Solutions That Drive Innovation</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Tailwind CSS CDN - IMPORTANT! -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <style>
+        /* Custom Tailwind Config */
+        body {
+            font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Additional Services Page Styles */
+        .category-tab {
+            transition: all 0.3s ease;
+        }
+
+        .category-tab.active {
+            background: linear-gradient(135deg, #0d9488, #06b6d4);
+            color: white;
+            box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.3);
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px -12px rgba(13, 148, 136, 0.15);
+        }
+
+        .tech-badge {
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card hover effects */
+        .card-bottom-border {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .card-bottom-border {
+            transform: scaleX(1);
+        }
+
+        /* Filter banner */
+        .filter-banner {
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Hide scrollbar on modal open */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden"
+            style="background: linear-gradient(135deg, #0f172a, #115e59, #0f172a);">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070')] bg-cover bg-center opacity-5">
+            </div>
+
+            <div class="relative container mx-auto px-4 py-28 md:py-36">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                        <i class="fas fa-star text-teal-300"></i>
+                        <span class="text-white font-semibold text-sm tracking-wide">OUR EXPERTISE</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                        <span class="block">Technology Services</span>
+                        <span class="bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">That
+                            Drive Innovation</span>
+                    </h1>
+
+                    <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                        We deliver cutting-edge technology solutions that transform businesses,
+                        enhance efficiency, and create sustainable competitive advantages in the digital landscape.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="openProjectForm()"
+                            class="group px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                            Start Your Project
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button
+                            class="px-8 py-4 border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+                            View Case Studies
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curved bottom edge -->
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 120L1440 0V120H0Z" fill="#f8fafc" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-24 relative bg-gray-50">
+            <div class="container mx-auto px-4">
+                <!-- Filter Banner -->
+                <div id="filterBanner"
+                    class="mb-6 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-4 flex items-center justify-between flex-wrap gap-4"
+                    style="display: none;">
+                    <div>
+                        <h3 class="font-semibold text-gray-900">
+                            Showing services in <span id="currentCategoryLabel" class="text-teal-600"></span>
+                        </h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Found <span id="filteredCount">0</span> service(s)
+                        </p>
+                    </div>
+                    <button onclick="clearFilter()"
+                        class="text-sm text-teal-600 hover:text-teal-700 font-medium flex items-center gap-1">
+                        Clear filter
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap justify-center gap-3 mb-16" id="categoryTabs">
+                    <!-- Categories will be injected here -->
+                </div>
+
+                <!-- Services Grid -->
+                <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                    <!-- Services will be injected here -->
+                </div>
+
+                <!-- No Results Message -->
+                <div id="noResults" class="text-center py-16" style="display: none;">
+                    <div class="h-20 w-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-server text-3xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">No services found</h3>
+                    <p class="text-gray-500">Try changing the category to see more services.</p>
+                    <button onclick="setActiveCategory('all')"
+                        class="mt-4 px-4 py-2 bg-teal-500 text-white rounded-lg font-medium">
+                        View all services
+                    </button>
+                </div>
+
+                <!-- Technology Stack Section -->
+                <div class="mt-20 text-center">
+                    <div class="max-w-3xl mx-auto mb-12">
+                        <span class="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Tech
+                            Stack</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technologies We Master</h3>
+                        <p class="text-lg text-gray-600">Leveraging modern, battle-tested technologies to build robust
+                            and scalable solutions.</p>
+                    </div>
+
+                    <div id="techStack" class="flex flex-wrap justify-center gap-4 md:gap-6">
+                        <!-- Tech items injected here -->
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="relative rounded-3xl overflow-hidden mt-24">
+                    <div class="absolute inset-0 bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700"></div>
+                    <div
+                        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070')] bg-cover bg-center opacity-10">
+                    </div>
+
+                    <div class="relative z-10 p-10 md:p-14 text-center">
+                        <div class="max-w-3xl mx-auto">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Business?
+                            </h2>
+                            <p class="text-teal-100 mb-8 text-lg">Let's discuss how our technology solutions can drive
+                                your digital transformation journey.</p>
+
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onclick="openProjectForm()"
+                                    class="group px-8 py-3.5 bg-white text-teal-600 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg">
+                                    Start Your Project
+                                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <button onclick="window.location.href='pages/contact.html'"
+                                    class="px-8 py-3.5 border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+                                    Book a Consultation
+                                </button>
+                            </div>
+
+                            <div class="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-teal-100 text-sm">
+                                <div class="flex items-center gap-2"><i class="fas fa-terminal"></i><span>No upfront
+                                        costs</span></div>
+                                <div class="flex items-center gap-2"><i class="fas fa-layer-group"></i><span>Flexible
+                                        engagement models</span></div>
+                                <div class="flex items-center gap-2"><i class="fas fa-code-branch"></i><span>Agile
+                                        development</span></div>
+                                <div class="flex items-center gap-2"><i class="fas fa-headset"></i><span>Dedicated
+                                        support</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Project Form Modal -->
+    <div id="projectFormModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 items-center justify-center p-4"
+        style="display: none;">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-gray-900">Start Your Project</h3>
+                <button onclick="closeProjectForm()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form id="projectForm" onsubmit="handleFormSubmit(event)">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                        <input type="text" id="name" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                        <input type="email" id="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Service Interested In *</label>
+                        <select id="service" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            <option value="">Select a service</option>
+                            <option value="web">Web Development</option>
+                            <option value="mobile">Mobile App Development</option>
+                            <option value="uiux">UI/UX Design</option>
+                            <option value="cloud">Cloud Solutions</option>
+                            <option value="ai">AI & ML Solutions</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="consulting">IT Consulting</option>
+                            <option value="database">Database Solutions</option>
+                            <option value="datascience">Data Analytics</option>
+                            <option value="digitalmarketing">Digital Marketing</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Project Details *</label>
+                        <textarea id="message" rows="4" required
+                            placeholder="Tell us about your project requirements..."
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Services Data (same as before)
+        const services = [
+            { id: "web", icon: "fa-code", title: "Web Development", description: "Enterprise-grade web applications built with modern frameworks for unparalleled performance, security, and scalability.", features: ["React/Next.js & Vue.js Development", "Node.js & Python Backend", "Headless CMS & API Integration", "PWA & Performance Optimization"], color: "from-blue-500 to-cyan-500", bgColor: "bg-blue-50", category: "development", popular: true },
+            { id: "mobile", icon: "fa-mobile-alt", title: "Mobile App Development", description: "Native and cross-platform mobile experiences that delight users and drive engagement across iOS and Android.", features: ["iOS (Swift/SwiftUI)", "Android (Kotlin/Jetpack)", "React Native & Flutter", "Cross-platform Solutions"], color: "from-green-500 to-emerald-500", bgColor: "bg-green-50", category: "development", popular: true },
+            { id: "uiux", icon: "fa-palette", title: "UI/UX Design", description: "Human-centered design solutions that create intuitive, accessible, and visually stunning digital experiences.", features: ["User Research & Testing", "Wireframing & Prototyping", "Design Systems", "Accessibility Compliance"], color: "from-purple-500 to-pink-500", bgColor: "bg-purple-50", category: "design", popular: true },
+            { id: "cloud", icon: "fa-cloud", title: "Cloud Solutions", description: "End-to-end cloud services including migration, architecture design, and managed services on AWS, Azure, and GCP.", features: ["Cloud Migration & Strategy", "DevOps & CI/CD Pipelines", "Kubernetes & Containerization", "Serverless Architecture"], color: "from-sky-500 to-blue-500", bgColor: "bg-sky-50", category: "infrastructure", popular: true },
+            { id: "ai", icon: "fa-microchip", title: "AI & ML Solutions", description: "Cutting-edge artificial intelligence and machine learning solutions that unlock insights and automate complex processes.", features: ["Predictive Analytics", "Natural Language Processing", "Computer Vision", "Generative AI Integration"], color: "from-violet-500 to-purple-500", bgColor: "bg-violet-50", category: "ai", popular: true },
+            { id: "cybersecurity", icon: "fa-shield-alt", title: "Cybersecurity", description: "Comprehensive security solutions protecting your digital assets from evolving threats and ensuring compliance.", features: ["Security Audits", "Penetration Testing", "DDoS Mitigation", "Compliance Management"], color: "from-red-500 to-rose-500", bgColor: "bg-red-50", category: "security" },
+            { id: "consulting", icon: "fa-chart-line", title: "IT Consulting", description: "Strategic technology advisory services to drive digital transformation and maximize technology ROI.", features: ["Digital Transformation", "Technology Assessment", "Process Optimization", "Legacy Modernization"], color: "from-indigo-500 to-purple-500", bgColor: "bg-indigo-50", category: "consulting" },
+            { id: "database", icon: "fa-database", title: "Database Solutions", description: "Expert database design, optimization, and management for high-performance, scalable data operations.", features: ["SQL & NoSQL", "Database Optimization", "Data Migration", "High Availability"], color: "from-teal-500 to-cyan-500", bgColor: "bg-teal-50", category: "infrastructure" },
+            { id: "datascience", icon: "fa-chart-bar", title: "Data Analytics", description: "Transform raw data into actionable insights with advanced analytics, BI dashboards, and data warehousing.", features: ["Business Intelligence", "Data Warehousing", "Real-time Analytics", "Data Visualization"], color: "from-amber-500 to-orange-500", bgColor: "bg-amber-50", category: "ai" },
+            { id: "digitalmarketing", icon: "fa-globe", title: "Digital Marketing", description: "Data-driven marketing strategies that increase visibility, engage audiences, and drive measurable growth.", features: ["SEO & Content Strategy", "Social Media Marketing", "Performance Marketing", "Email Automation"], color: "from-teal-500 to-green-500", bgColor: "bg-teal-50", category: "marketing" }
+        ];
+
+        const categories = [
+            { id: "all", label: "All Services", count: services.length },
+            { id: "development", label: "Development", count: services.filter(s => s.category === "development").length },
+            { id: "design", label: "Design", count: services.filter(s => s.category === "design").length },
+            { id: "infrastructure", label: "Infrastructure", count: services.filter(s => s.category === "infrastructure").length },
+            { id: "ai", label: "AI & Data", count: services.filter(s => s.category === "ai").length },
+            { id: "security", label: "Security", count: services.filter(s => s.category === "security").length },
+            { id: "consulting", label: "Consulting", count: services.filter(s => s.category === "consulting").length },
+            { id: "marketing", label: "Marketing", count: services.filter(s => s.category === "marketing").length }
+        ];
+
+        const techItems = ["React", "Node.js", "Laravel", "Python", "AWS", "MongoDB", "Docker", "Redis", "AI/ML", "GenAI", "NLP", "Computer Vision"];
+
+        let activeCategory = "all";
+
+        function getCategoryFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("category") || "all";
+        }
+
+        function setActiveCategory(categoryId) {
+            activeCategory = categoryId;
+
+            if (categoryId === "all") {
+                window.history.pushState({}, "", "services.html");
+            } else {
+                window.history.pushState({}, "", `services.html?category=${categoryId}`);
+            }
+
+            renderCategories();
+            renderServices();
+
+            const filterBanner = document.getElementById("filterBanner");
+            if (categoryId !== "all") {
+                const category = categories.find(c => c.id === categoryId);
+                document.getElementById("currentCategoryLabel").innerText = category?.label || "";
+                filterBanner.style.display = "flex";
+            } else {
+                filterBanner.style.display = "none";
+            }
+        }
+
+        function clearFilter() {
+            setActiveCategory("all");
+        }
+
+        function renderCategories() {
+            const container = document.getElementById("categoryTabs");
+            container.innerHTML = categories.map(cat => `
+                <button onclick="setActiveCategory('${cat.id}')" 
+                    class="category-tab px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 flex items-center gap-2 ${activeCategory === cat.id ? 'active' : 'bg-white text-gray-700 hover:text-teal-600 hover:bg-gray-50 border border-gray-200'}"
+                >
+                    ${cat.label}
+                    <span class="px-2 py-0.5 rounded-full text-xs ${activeCategory === cat.id ? 'bg-white/20' : 'bg-gray-100'}">${cat.count}</span>
+                </button>
+            `).join("");
+        }
+
+        function renderServices() {
+            const filtered = activeCategory === "all" ? services : services.filter(s => s.category === activeCategory);
+            const container = document.getElementById("servicesGrid");
+            const noResults = document.getElementById("noResults");
+            const filteredCountSpan = document.getElementById("filteredCount");
+
+            if (filteredCountSpan) filteredCountSpan.innerText = filtered.length;
+
+            if (filtered.length === 0) {
+                container.style.display = "none";
+                noResults.style.display = "block";
+                return;
+            }
+
+            container.style.display = "grid";
+            noResults.style.display = "none";
+
+            container.innerHTML = filtered.map((service, index) => `
+                <div class="service-card group relative bg-white rounded-3xl border border-gray-100 overflow-hidden hover:border-teal-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    ${service.popular ? `
+                        <div class="absolute top-4 right-4 z-10">
+                            <div class="px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1">
+                                <i class="fas fa-star text-xs"></i> Popular
+                            </div>
+                        </div>
+                    ` : ''}
+                    <div class="p-8">
+                        <div class="mb-8 h-16 w-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas ${service.icon} text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors">${service.title}</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">${service.description}</p>
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-gray-900 text-sm flex items-center gap-2">
+                                <i class="fas fa-check-circle text-teal-600"></i> Key Capabilities
+                            </h4>
+                            <ul class="space-y-2">
+                                ${service.features.map(f => `
+                                    <li class="flex items-center text-gray-700 text-sm">
+                                        <div class="h-1.5 w-1.5 rounded-full bg-teal-500 mr-3"></div>
+                                        ${f}
+                                    </li>
+                                `).join("")}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8">
+                        <button onclick="openProjectForm()" class="text-teal-600 font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Learn More <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+                    <div class="card-bottom-border bg-gradient-to-r ${service.color}"></div>
+                </div>
+            `).join("");
+        }
+
+        function renderTechStack() {
+            const container = document.getElementById("techStack");
+            container.innerHTML = techItems.map(tech => `
+                <div class="tech-badge px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300 hover:-translate-y-1">
+                    <span class="font-semibold text-gray-700">${tech}</span>
+                </div>
+            `).join("");
+        }
+
+        function openProjectForm() {
+            document.getElementById("projectFormModal").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeProjectForm() {
+            document.getElementById("projectFormModal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert("Thank you! Our team will get back to you within 24 hours.");
+            closeProjectForm();
+            document.getElementById("projectForm").reset();
+        }
+
+        function loadHeaderFooter() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('header').innerHTML = data)
+                .catch(error => console.log('Error loading header:', error));
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer').innerHTML = data)
+                .catch(error => console.log('Error loading footer:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHeaderFooter();
+            renderTechStack();
+            const urlCategory = getCategoryFromUrl();
+            activeCategory = urlCategory;
+            renderCategories();
+            renderServices();
+
+            if (activeCategory !== "all") {
+                const category = categories.find(c => c.id === activeCategory);
+                document.getElementById("currentCategoryLabel").innerText = category?.label || "";
+                document.getElementById("filterBanner").style.display = "flex";
+            }
+        });
+
+        window.addEventListener('popstate', () => {
+            const urlCategory = getCategoryFromUrl();
+            activeCategory = urlCategory;
+            renderCategories();
+            renderServices();
+
+            if (activeCategory !== "all") {
+                const category = categories.find(c => c.id === activeCategory);
+                document.getElementById("currentCategoryLabel").innerText = category?.label || "";
+                document.getElementById("filterBanner").style.display = "flex";
+            } else {
+                document.getElementById("filterBanner").style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Careers - BL TECH | Build The Future With Us</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600">
+            <div class="absolute inset-0 opacity-10"
+                style="backgroundImage: radial-gradient(circle at 1px 1px, white 1px, transparent 1px); backgroundSize: 40px 40px">
+            </div>
+            <div class="relative container mx-auto px-4 py-24 md:py-32">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                        <i class="fas fa-star text-white"></i>
+                        <span class="text-white font-semibold text-sm">We're Hiring!</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                        <span class="block">Build The Future</span>
+                        <span class="text-pink-200">With Us</span>
+                    </h1>
+
+                    <p class="text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+                        Join our mission to revolutionize software development. Work
+                        with brilliant minds, solve challenging problems, and grow your
+                        career at a company that values innovation.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="scrollToPositions()"
+                            class="group px-8 py-3.5 bg-white text-indigo-600 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                            View Open Positions
+                            <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button
+                            class="px-8 py-3.5 border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                            Meet Our Team
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mt-16">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white mb-2">50+</div>
+                            <div class="text-white/80 text-sm">Team Members</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white mb-2" id="jobCount">0</div>
+                            <div class="text-white/80 text-sm">Open Positions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white mb-2">4.8</div>
+                            <div class="text-white/80 text-sm">Employee Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Culture & Values</h2>
+                    <p class="text-gray-600">These principles guide everything we do, from hiring to product
+                        development.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="valuesGrid">
+                    <!-- Values injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Perks & Benefits -->
+        <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Perks & Benefits</h2>
+                    <p class="text-gray-600">We take care of our team so you can focus on doing your best work.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="perksGrid">
+                    <!-- Perks injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Testimonials -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Hear From Our Team</h2>
+                    <p class="text-gray-600">Don't just take our word for it. Here's what our team members have to say.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="testimonialsGrid">
+                    <!-- Testimonials injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Positions -->
+        <section id="open-positions" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Open Positions</h2>
+                    <p class="text-gray-600">Find your perfect role and join our growing team.</p>
+                </div>
+
+                <!-- Search and Filter -->
+                <div class="mb-8">
+                    <div class="flex flex-col md:flex-row gap-4 mb-6">
+                        <div class="flex-1 relative">
+                            <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                            <input type="text" id="searchInput"
+                                placeholder="Search jobs by title, skills, or keywords..."
+                                class="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                        </div>
+                        <div class="flex gap-2 overflow-x-auto pb-2" id="categoryFilters">
+                            <!-- Categories injected here -->
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-gray-600">
+                        <div>
+                            Showing <span id="showingCount" class="font-bold">0</span> of <span id="totalCount"
+                                class="font-bold">0</span> positions
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-2">
+                                <div class="h-2 w-2 rounded-full bg-green-500"></div>
+                                <span>Remote</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="h-2 w-2 rounded-full bg-red-500"></div>
+                                <span>Urgent Hiring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="text-center py-16">
+                    <div
+                        class="h-20 w-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4 animate-pulse">
+                        <i class="fas fa-clock text-gray-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Loading Job Openings...</h3>
+                    <p class="text-gray-600">Fetching the latest opportunities for you</p>
+                </div>
+
+                <!-- Jobs Grid -->
+                <div id="jobsGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-6" style="display: none;">
+                    <!-- Jobs injected here -->
+                </div>
+
+                <!-- No Results -->
+                <div id="noResults" class="text-center py-16" style="display: none;">
+                    <div class="h-20 w-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-gray-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">No positions found</h3>
+                    <p class="text-gray-600 mb-6">Try adjusting your search or filter to find what you're looking for.
+                    </p>
+                    <button onclick="clearAllFilters()"
+                        class="px-6 py-2.5 border-2 border-purple-500 text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-colors">
+                        Clear All Filters
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Process -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Hiring Process</h2>
+                    <p class="text-gray-600">Transparent, respectful, and designed to help you succeed.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="h-20 w-20 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center mx-auto transition-transform group-hover:scale-110">
+                                <span class="text-2xl font-bold text-purple-600">1</span>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Application Review</h3>
+                        <p class="text-gray-600 text-sm mb-2">We review your application within 48 hours</p>
+                        <div class="text-xs text-gray-500">1-2 days</div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="h-20 w-20 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center mx-auto transition-transform group-hover:scale-110">
+                                <span class="text-2xl font-bold text-purple-600">2</span>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Initial Screening</h3>
+                        <p class="text-gray-600 text-sm mb-2">30-minute call with our recruiting team</p>
+                        <div class="text-xs text-gray-500">30 mins</div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="h-20 w-20 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center mx-auto transition-transform group-hover:scale-110">
+                                <span class="text-2xl font-bold text-purple-600">3</span>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Technical Interview</h3>
+                        <p class="text-gray-600 text-sm mb-2">Skills assessment with the team you'll work with</p>
+                        <div class="text-xs text-gray-500">1-2 hours</div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="h-20 w-20 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center mx-auto transition-transform group-hover:scale-110">
+                                <span class="text-2xl font-bold text-purple-600">4</span>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Offer & Onboarding</h3>
+                        <p class="text-gray-600 text-sm mb-2">Welcome to the team!</p>
+                        <div class="text-xs text-gray-500">1 week</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Don't See Your Dream Role?</h2>
+                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    We're always looking for talented people. Send us your resume and tell us how you can contribute.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openGeneralApplication()"
+                        class="group px-8 py-3.5 bg-white text-indigo-600 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                        Submit General Application
+                        <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <a href="mailto:careers@bltech.in"
+                        class="px-8 py-3.5 border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        Contact HR
+                    </a>
+                </div>
+
+                <div class="mt-8 text-white/80 text-sm flex flex-wrap justify-center gap-6">
+                    <div class="flex items-center gap-2"><i class="fas fa-shield-alt"></i><span>Equal Opportunity
+                            Employer</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i><span>Visa Sponsorship
+                            Available</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-users"></i><span>Inclusive Workplace</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Application Form Modal -->
+    <div id="applicationModal"
+        class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+        style="display: none;">
+        <div
+            class="relative bg-white rounded-3xl w-full max-w-2xl p-8 shadow-2xl z-[10000] max-h-[90vh] overflow-y-auto">
+            <button onclick="closeApplicationModal()"
+                class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors z-50">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div
+                    class="h-16 w-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-rocket text-white text-2xl"></i>
+                </div>
+                <h3 id="modalJobTitle" class="text-2xl font-bold text-gray-900 mb-2">Apply for Position</h3>
+                <p class="text-gray-600">Fill in your details and upload your resume to apply</p>
+            </div>
+
+            <form id="applicationForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                        <input type="text" id="appName" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                        <input type="email" id="appEmail" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                        <input type="tel" id="appPhone" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Years of Experience *</label>
+                        <select id="appExperience" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                            <option value="">Select</option>
+                            <option value="0-1">0-1 years</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5-7">5-7 years</option>
+                            <option value="7+">7+ years</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">LinkedIn Profile</label>
+                    <div class="relative">
+                        <i class="fab fa-linkedin absolute left-3 top-3 text-gray-400"></i>
+                        <input type="url" id="appLinkedin"
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">GitHub Profile</label>
+                    <div class="relative">
+                        <i class="fab fa-github absolute left-3 top-3 text-gray-400"></i>
+                        <input type="url" id="appGithub"
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                    </div>
+                </div>
+
+                <!-- Resume Upload -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Resume / CV *</label>
+                    <div id="resumeDropzone"
+                        class="relative border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-purple-400 transition-colors group cursor-pointer">
+                        <div id="resumePlaceholder">
+                            <div
+                                class="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-book-open text-purple-600 text-2xl"></i>
+                            </div>
+                            <p class="text-gray-600 mb-2">Drop your resume here or click to browse</p>
+                            <p class="text-gray-500 text-sm">PDF, DOC, DOCX, TXT up to 5MB</p>
+                        </div>
+                        <div id="resumePreview" style="display: none;" class="text-left">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-file-pdf text-purple-600 text-2xl"></i>
+                                <div>
+                                    <p id="resumeName" class="font-medium text-gray-900"></p>
+                                    <p id="resumeSize" class="text-gray-500 text-sm"></p>
+                                </div>
+                            </div>
+                            <button type="button" onclick="resetResume()"
+                                class="mt-3 text-sm text-purple-600 hover:text-purple-700">Change File</button>
+                        </div>
+                        <input type="file" id="appResume"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                            accept=".pdf,.doc,.docx,.txt" onchange="handleFileChange(this)">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Cover Letter (Optional)</label>
+                    <textarea id="appCoverLetter" rows="4"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none resize-none"
+                        placeholder="Tell us why you're interested in this role..."></textarea>
+                </div>
+
+                <div class="flex items-start gap-2 text-sm text-gray-600">
+                    <input type="checkbox" id="privacyCheckbox" required class="rounded mt-1">
+                    <label for="privacyCheckbox" class="text-left">I agree to the privacy policy and consent to my data
+                        being processed for recruitment purposes.</label>
+                </div>
+
+                <button type="submit" id="submitBtn"
+                    class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-0.5">
+                    Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed bottom-4 right-4 z-50 transform transition-all duration-300 translate-x-full opacity-0">
+        <div id="toastContent" class="bg-white rounded-xl shadow-2xl p-4 min-w-[300px] border-l-4"></div>
+    </div>
+
+    <script>
+        // Job Openings Data
+        const jobOpenings = [
+            { id: 1, title: "Senior Software Engineer", description: "Build and scale our core products with modern technologies.", department: "engineering", location: "Remote", experience: "5+ years", skills: ["React", "Node.js", "Python", "AWS"], urgent: true, posted: "2024-12-01T00:00:00Z" },
+            { id: 2, title: "Frontend Developer", description: "Create responsive and performant user interfaces.", department: "engineering", location: "Remote", experience: "3+ years", skills: ["React", "TypeScript", "Tailwind CSS"], urgent: false, posted: "2024-12-05T00:00:00Z" },
+            { id: 3, title: "UI/UX Designer", description: "Design beautiful and intuitive user experiences.", department: "design", location: "Remote", experience: "4+ years", skills: ["Figma", "Adobe XD", "User Research"], urgent: true, posted: "2024-12-03T00:00:00Z" },
+            { id: 4, title: "Product Manager", description: "Lead product strategy and execution.", department: "product", location: "Remote", experience: "5+ years", skills: ["Product Strategy", "Agile", "Data Analysis"], urgent: false, posted: "2024-12-07T00:00:00Z" },
+            { id: 5, title: "Data Scientist", description: "Extract insights from data using ML and analytics.", department: "data", location: "Remote", experience: "3+ years", skills: ["Python", "SQL", "Machine Learning", "TensorFlow"], urgent: true, posted: "2024-12-02T00:00:00Z" },
+            { id: 6, title: "Marketing Manager", description: "Drive growth and brand awareness.", department: "marketing", location: "Remote", experience: "4+ years", skills: ["Digital Marketing", "SEO", "Content Strategy"], urgent: false, posted: "2024-12-06T00:00:00Z" }
+        ];
+
+        // Values Data
+        const values = [
+            { icon: "fa-users", title: "Collaboration First", description: "We believe in working together to solve hard problems", color: "text-blue-600", bg: "bg-blue-100" },
+            { icon: "fa-bolt", title: "Move Fast", description: "Ship quickly, learn constantly, and iterate often", color: "text-yellow-600", bg: "bg-yellow-100" },
+            { icon: "fa-brain", title: "Stay Curious", description: "Always ask why and explore new possibilities", color: "text-purple-600", bg: "bg-purple-100" },
+            { icon: "fa-shield-alt", title: "Own Your Work", description: "Take responsibility and pride in what you build", color: "text-green-600", bg: "bg-green-100" }
+        ];
+
+        // Perks Data
+        const perks = [
+            { icon: "fa-dollar-sign", title: "Competitive Salary", description: "Industry-leading compensation with equity options" },
+            { icon: "fa-globe", title: "Remote First", description: "Work from anywhere with flexible hours" },
+            { icon: "fa-heart", title: "Health & Wellness", description: "Comprehensive medical, dental, and mental health coverage" },
+            { icon: "fa-book", title: "Learning Budget", description: "$5,000 annual budget for courses, books, and conferences" },
+            { icon: "fa-calendar", title: "Unlimited PTO", description: "Take time off when you need it, no questions asked" },
+            { icon: "fa-trophy", title: "Career Growth", description: "Clear promotion paths and mentorship programs" },
+            { icon: "fa-coffee", title: "Wellness Stipend", description: "$500 monthly for health, fitness, and home office" },
+            { icon: "fa-gamepad", title: "Fun & Games", description: "Team building activities and gaming sessions" }
+        ];
+
+        // Testimonials Data
+        const testimonials = [
+            { name: "Alex Chen", role: "Senior Engineer", tenure: "3 years", quote: "The freedom to work remotely while tackling challenging technical problems has been incredible.", avatar: "AC" },
+            { name: "Maria Rodriguez", role: "Product Designer", tenure: "2 years", quote: "I've never worked at a company that values design as much as BL TECH.", avatar: "MR" },
+            { name: "David Kim", role: "Data Scientist", tenure: "1 year", quote: "The mentorship I've received here has accelerated my career growth.", avatar: "DK" },
+            { name: "Sarah Johnson", role: "Engineering Manager", tenure: "4 years", quote: "Watching our team grow while maintaining our collaborative culture has been amazing.", avatar: "SJ" }
+        ];
+
+        // Categories
+        const categories = [
+            { id: "all", label: "All Roles", icon: "fa-briefcase", count: jobOpenings.length },
+            { id: "engineering", label: "Engineering", icon: "fa-code", count: jobOpenings.filter(j => j.department === "engineering").length },
+            { id: "design", label: "Design", icon: "fa-palette", count: jobOpenings.filter(j => j.department === "design").length },
+            { id: "product", label: "Product", icon: "fa-bullseye", count: jobOpenings.filter(j => j.department === "product").length },
+            { id: "data", label: "Data Science", icon: "fa-brain", count: jobOpenings.filter(j => j.department === "data").length },
+            { id: "marketing", label: "Marketing", icon: "fa-chart-line", count: jobOpenings.filter(j => j.department === "marketing").length }
+        ];
+
+        let activeFilter = "all";
+        let searchQuery = "";
+        let selectedJob = null;
+        let currentResumeFile = null;
+
+        // Format relative time
+        function formatRelativeTime(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+            if (diffDays === 0) return "Today";
+            if (diffDays === 1) return "Yesterday";
+            if (diffDays < 7) return `${diffDays} days ago`;
+            if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+            return `${Math.floor(diffDays / 30)} months ago`;
+        }
+
+        // Get department name
+        function getDepartmentName(department) {
+            const names = { engineering: "Engineering", design: "Design", product: "Product", data: "Data Science", marketing: "Marketing" };
+            return names[department] || department;
+        }
+
+        // Get department icon
+        function getDepartmentIcon(department) {
+            const icons = { engineering: "fa-code", design: "fa-palette", product: "fa-bullseye", data: "fa-brain", marketing: "fa-chart-line" };
+            return icons[department] || "fa-briefcase";
+        }
+
+        // Render functions
+        function renderValues() {
+            const container = document.getElementById("valuesGrid");
+            container.innerHTML = values.map(v => `
+                <div class="text-center group">
+                    <div class="h-16 w-16 rounded-2xl ${v.bg} flex items-center justify-center mx-auto mb-4 transition-transform group-hover:scale-110">
+                        <i class="fas ${v.icon} ${v.color} text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">${v.title}</h3>
+                    <p class="text-gray-600">${v.description}</p>
+                </div>
+            `).join("");
+        }
+
+        function renderPerks() {
+            const container = document.getElementById("perksGrid");
+            container.innerHTML = perks.map(p => `
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-purple-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center mb-4">
+                        <i class="fas ${p.icon} text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">${p.title}</h3>
+                    <p class="text-gray-600 text-sm">${p.description}</p>
+                </div>
+            `).join("");
+        }
+
+        function renderTestimonials() {
+            const container = document.getElementById("testimonialsGrid");
+            container.innerHTML = testimonials.map(t => `
+                <div class="group bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="flex items-start mb-6">
+                        <div class="h-14 w-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-lg mr-4">${t.avatar}</div>
+                        <div><div class="font-bold text-gray-900">${t.name}</div><div class="text-gray-600 text-sm">${t.role}</div><div class="text-gray-500 text-xs">• ${t.tenure}</div></div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"${t.quote}"</p>
+                </div>
+            `).join("");
+        }
+
+        function renderCategories() {
+            const container = document.getElementById("categoryFilters");
+            container.innerHTML = categories.map(cat => `
+                <button onclick="setActiveFilter('${cat.id}')" class="filter-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium whitespace-nowrap transition-all ${activeFilter === cat.id ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg' : 'bg-white text-gray-700 border border-gray-300 hover:border-purple-300'}">
+                    <i class="fas ${cat.icon}"></i> ${cat.label} <span class="px-2 py-0.5 rounded-full text-xs ${activeFilter === cat.id ? 'bg-white/20' : 'bg-gray-100'}">${cat.count}</span>
+                </button>
+            `).join("");
+        }
+
+        function renderJobs() {
+            const filtered = jobOpenings.filter(job => {
+                const matchesCategory = activeFilter === "all" || job.department === activeFilter;
+                const matchesSearch = searchQuery === "" || job.title.toLowerCase().includes(searchQuery.toLowerCase()) || job.description.toLowerCase().includes(searchQuery.toLowerCase()) || job.skills.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
+                return matchesCategory && matchesSearch;
+            });
+
+            document.getElementById("showingCount").innerText = filtered.length;
+            document.getElementById("totalCount").innerText = jobOpenings.length;
+            document.getElementById("jobCount").innerText = jobOpenings.length;
+
+            const jobsGrid = document.getElementById("jobsGrid");
+            const loadingState = document.getElementById("loadingState");
+            const noResults = document.getElementById("noResults");
+
+            if (filtered.length === 0) {
+                jobsGrid.style.display = "none";
+                loadingState.style.display = "none";
+                noResults.style.display = "block";
+                return;
+            }
+
+            jobsGrid.style.display = "grid";
+            loadingState.style.display = "none";
+            noResults.style.display = "none";
+
+            jobsGrid.innerHTML = filtered.map(job => `
+                <div class="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:border-purple-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    ${job.urgent ? `<div class="absolute top-4 left-4 px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full">Urgent</div>` : ''}
+                    <div class="flex flex-col md:flex-row md:items-start gap-4">
+                        <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                            <i class="fas ${getDepartmentIcon(job.department)} text-purple-600 text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-3">
+                                <div><h3 class="text-xl font-bold text-gray-900 group-hover:text-purple-700">${job.title}</h3><p class="text-gray-600 text-sm mt-1">${job.description}</p></div>
+                            </div>
+                            <div class="flex flex-wrap gap-4 mb-4">
+                                <div class="flex items-center gap-2 text-gray-600"><i class="fas fa-map-marker-alt"></i><span class="text-sm">${job.location}</span></div>
+                                <div class="flex items-center gap-2 text-gray-600"><i class="fas fa-briefcase"></i><span class="text-sm">${getDepartmentName(job.department)}</span></div>
+                                <div class="flex items-center gap-2 text-gray-600"><i class="fas fa-clock"></i><span class="text-sm">${job.experience}</span></div>
+                                <div class="flex items-center gap-2 text-gray-600"><i class="fas fa-trophy"></i><span class="text-sm">Posted ${formatRelativeTime(job.posted)}</span></div>
+                            </div>
+                            ${job.skills ? `<div class="flex flex-wrap gap-2 mb-6">${job.skills.map(skill => `<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">${skill}</span>`).join("")}</div>` : ''}
+                            <div class="flex gap-3"><button onclick="openApplicationModal(${job.id})" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">Apply Now <i class="fas fa-chevron-right"></i></button></div>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        // Filter functions
+        function setActiveFilter(filterId) {
+            activeFilter = filterId;
+            renderCategories();
+            renderJobs();
+        }
+
+        function handleSearch() {
+            searchQuery = document.getElementById("searchInput").value;
+            renderJobs();
+        }
+
+        function clearAllFilters() {
+            activeFilter = "all";
+            searchQuery = "";
+            document.getElementById("searchInput").value = "";
+            renderCategories();
+            renderJobs();
+        }
+
+        function scrollToPositions() {
+            document.getElementById("open-positions").scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Modal functions
+        function openApplicationModal(jobId) {
+            selectedJob = jobOpenings.find(j => j.id === jobId);
+            if (!selectedJob) return;
+            document.getElementById("modalJobTitle").innerText = `Apply for ${selectedJob.title}`;
+            document.getElementById("applicationModal").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function openGeneralApplication() {
+            selectedJob = { title: "General Application", id: "general" };
+            document.getElementById("modalJobTitle").innerText = "General Application";
+            document.getElementById("applicationModal").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeApplicationModal() {
+            document.getElementById("applicationModal").style.display = "none";
+            document.body.style.overflow = "auto";
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById("applicationForm").reset();
+            currentResumeFile = null;
+            resetResumePreview();
+        }
+
+        function resetResumePreview() {
+            document.getElementById("resumePlaceholder").style.display = "block";
+            document.getElementById("resumePreview").style.display = "none";
+            document.getElementById("appResume").value = "";
+            currentResumeFile = null;
+        }
+
+        function resetResume() {
+            resetResumePreview();
+        }
+
+        // File handling
+        function handleFileChange(input) {
+            const file = input.files[0];
+            if (file) {
+                const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/plain'];
+                if (!validTypes.includes(file.type)) {
+                    showToast({ title: "Invalid File Type", body: "Please upload PDF, DOC, DOCX, or TXT files only." }, false);
+                    input.value = "";
+                    return;
+                }
+                if (file.size > 5 * 1024 * 1024) {
+                    showToast({ title: "File Too Large", body: "Please upload a file smaller than 5MB." }, false);
+                    input.value = "";
+                    return;
+                }
+                currentResumeFile = file;
+                document.getElementById("resumePlaceholder").style.display = "none";
+                document.getElementById("resumePreview").style.display = "block";
+                document.getElementById("resumeName").innerText = file.name;
+                document.getElementById("resumeSize").innerText = formatFileSize(file.size);
+            }
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + " B";
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+            return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+        }
+
+        // Toast notification
+        function showToast(message, isSuccess = true) {
+            const toast = document.getElementById("toast");
+            const toastContent = document.getElementById("toastContent");
+            toastContent.className = `bg-white rounded-xl shadow-2xl p-4 min-w-[300px] border-l-4 ${isSuccess ? 'border-green-500' : 'border-red-500'}`;
+            toastContent.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 rounded-full ${isSuccess ? 'bg-green-100' : 'bg-red-100'} flex items-center justify-center">
+                        <i class="fas ${isSuccess ? 'fa-check-circle text-green-600' : 'fa-exclamation-circle text-red-600'} text-xl"></i>
+                    </div>
+                    <div><div class="font-bold text-gray-900">${message.title}</div><div class="text-sm text-gray-500">${message.body}</div></div>
+                </div>
+            `;
+            toast.classList.remove("translate-x-full", "opacity-0");
+            toast.classList.add("translate-x-0", "opacity-100");
+            setTimeout(() => {
+                toast.classList.remove("translate-x-0", "opacity-100");
+                toast.classList.add("translate-x-full", "opacity-0");
+            }, 4000);
+        }
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById("appName").value;
+            const email = document.getElementById("appEmail").value;
+            const phone = document.getElementById("appPhone").value;
+            const experience = document.getElementById("appExperience").value;
+            const privacy = document.getElementById("privacyCheckbox").checked;
+
+            if (!name || !email || !phone || !experience || !privacy) {
+                showToast({ title: "Missing Fields", body: "Please fill in all required fields." }, false);
+                return;
+            }
+
+            if (!currentResumeFile) {
+                showToast({ title: "Resume Required", body: "Please upload your resume." }, false);
+                return;
+            }
+
+            const submitBtn = document.getElementById("submitBtn");
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="flex items-center justify-center gap-2"><div class="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin-slow"></div> Submitting...</span>';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                showToast({ title: "Application Submitted Successfully!", body: "We'll review your application and get back to you soon." }, true);
+                closeApplicationModal();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        }
+
+        // Load header and footer
+        function loadHeaderFooter() {
+            fetch('header.html').then(r => r.text()).then(data => document.getElementById('header').innerHTML = data).catch(e => console.log('Error loading header:', e));
+            fetch('footer.html').then(r => r.text()).then(data => document.getElementById('footer').innerHTML = data).catch(e => console.log('Error loading footer:', e));
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHeaderFooter();
+            renderValues();
+            renderPerks();
+            renderTestimonials();
+            renderCategories();
+            renderJobs();
+            document.getElementById("searchInput").addEventListener("input", handleSearch);
+            document.getElementById("applicationForm").addEventListener("submit", handleFormSubmit);
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
